@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>uShip — Ship the Big Stuff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+    <nav class="main-nav">
+      <a href="#">Getting Started</a>
+      <a href="#">Ship</a>
+      <a href="#">Find Shipments</a>
+      <a href="#">For Carriers</a>
+      <a href="#">For Business</a>
+    </nav>
+    <div class="header-auth">
+      <a href="signin.html">Sign In</a>
+      <a href="#">Join</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="container">
+    <div>
+      <h1>Find Shipping Companies for Large Items, Cars, Furniture, and More</h1>
+      <p class="sub">See real quotes from top-rated carriers, compare transparent pricing upfront, and choose the best option for your timeline and budget.</p>
+      <form class="hero-form" onsubmit="return false">
+        <select id="category">
+          <option>Select a Category</option>
+          <option>Vehicles &amp; Boats</option>
+          <option>Motorcycles</option>
+          <option>Household Items</option>
+          <option>Heavy Equipment</option>
+          <option>Freight</option>
+        </select>
+        <select id="subcategory">
+          <option>Select a Subcategory</option>
+          <option>Cars</option>
+          <option>Boats</option>
+          <option>RVs</option>
+          <option>Trailers</option>
+          <option>Parts</option>
+        </select>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#" data-next>Get Shipping Quotes</a>
+          <a class="btn btn-outline" href="#">Become A Carrier</a>
+        </div>
+      </form>
+    </div>
+    <div class="hero-art">
+      <img src="assets/hero.webp" alt="Person using cell phone to get a free estimate on car shipping">
+    </div>
+  </div>
+</section>
+
+<!-- ============ Category strip ============ -->
+<section class="cat-strip">
+  <div class="container">
+    <a class="cat" href="#">
+      <div class="cat-icon"><img src="assets/cat-vehicles.webp" alt=""></div>
+      <h3>Vehicles &amp; Boats</h3>
+      <p>Cars, Boats, RVs, Trailers, Parts</p>
+    </a>
+    <a class="cat" href="#">
+      <div class="cat-icon"><img src="assets/cat-motorcycles.webp" alt=""></div>
+      <h3>Motorcycles</h3>
+      <p>Motorcycles, Mopeds</p>
+    </a>
+    <a class="cat" href="household-items.html">
+      <div class="cat-icon"><img src="assets/cat-household.webp" alt=""></div>
+      <h3>Household Items</h3>
+      <p>Furniture, Appliances</p>
+    </a>
+    <a class="cat" href="#">
+      <div class="cat-icon"><img src="assets/cat-heavy.webp" alt=""></div>
+      <h3>Heavy Equipment</h3>
+      <p>Farm, Construction</p>
+    </a>
+    <a class="cat" href="#">
+      <div class="cat-icon"><img src="assets/cat-freight.webp" alt=""></div>
+      <h3>Freight</h3>
+      <p>LTL, FTL</p>
+    </a>
+  </div>
+</section>
+
+<!-- ============ How it works ============ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">How uShip's Shipping Marketplace Works</h2>
+    <p class="section-sub">uShip makes shipping big items a breeze. Here's how it works:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-art"><img src="assets/step-1.webp" alt="Listing a shipment"></div>
+        <h3>1. List</h3>
+        <p>Provide details about your shipment to start the listing process and get a price in minutes.</p>
+      </div>
+      <div class="step">
+        <div class="step-art"><img src="assets/step-2.webp" alt="Comparing carrier quotes"></div>
+        <h3>2. Compare</h3>
+        <p>Compare quotes from multiple carriers on one platform to find the one that fits your needs and budget.</p>
+      </div>
+      <div class="step">
+        <div class="step-art"><img src="assets/step-3.webp" alt="Booking and shipping"></div>
+        <h3>3. Book &amp; Ship</h3>
+        <p>Book with added protection and secure payments, backed by 24/7 support and our Ship with Confidence Guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Testimonials ============ -->
+<section class="section testimonials">
+  <div class="container">
+    <h2 class="section-title">People Love Shipping with uShip</h2>
+    <div class="quote-grid" style="margin-top:44px" id="quotes">
+      <div class="quote-card active">
+        <div class="quote-art"><img src="assets/quote-motorcycle.webp" alt="Motorcycle"></div>
+        <blockquote>"uShip was great to work with and very easy. The company doing the transport had my motorcycle to me in four days. The total price was very reasonable. I will gladly use uShip again!"</blockquote>
+        <cite>– Thomas R. (Alton, IL)</cite>
+      </div>
+      <div class="quote-card">
+        <div class="quote-art"><img src="assets/quote-camper.webp" alt="Camper trailer"></div>
+        <blockquote>"I have used uShip six times in the last five years. Great company – they have kept their standards high on every experience I have with them. I can't recommend highly enough."</blockquote>
+        <cite>– Taylor S. (Bend, OR)</cite>
+      </div>
+      <div class="quote-card">
+        <div class="quote-art"><img src="assets/quote-chair.webp" alt="Armchair"></div>
+        <blockquote>"The whole process was easy and went smooth as glass. My chair arrived way faster than I was anticipating and in perfect condition. Price was very reasonable. Highly recommended."</blockquote>
+        <cite>– Kirsten W. (Austin, TX)</cite>
+      </div>
+    </div>
+    <div class="quote-dots" id="quote-dots"><span class="active"></span><span></span><span></span></div>
+  </div>
+</section>
+
+<!-- ============ Ratings bar ============ -->
+<section class="ratings-bar">
+  <div class="container">
+    <div class="rating">
+      <span class="score">4.9</span>
+      <div><div class="stars"><img src="assets/stars-49.svg" alt="4.9 out of 5 stars"></div><div class="meta">6,941 Reviews</div></div>
+      <span class="brand"><img src="assets/logo-google.svg" alt="Google"></span>
+    </div>
+    <div class="rating">
+      <span class="score">4.5</span>
+      <div><div class="stars"><img src="assets/stars-45.svg" alt="4.5 out of 5 stars"></div><div class="meta">405 Reviews</div></div>
+      <span class="brand"><img src="assets/logo-bbb.svg" alt="Better Business Bureau"></span>
+    </div>
+    <div class="rating">
+      <span class="score">4.4</span>
+      <div><div class="stars"><img src="assets/stars-45.svg" alt="4.4 out of 5 stars"></div><div class="meta">13,648 Reviews</div></div>
+      <span class="brand"><img src="assets/logo-trustpilot.svg" alt="Trustpilot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Safe & sound ============ -->
+<section class="section safe">
+  <div class="container">
+    <div>
+      <h2>Get It There Safe and Sound, Exactly as You Sent It</h2>
+      <p class="lede">From booking to delivery, uShip has the tools and support you need to ship with total confidence — whether you're new to big shipping or a seasoned logistics veteran.</p>
+      <a class="btn btn-primary" href="#" data-next>Get Shipping Quotes</a>
+    </div>
+    <div>
+      <div class="feature">
+        <div class="f-icon"><img src="assets/icon-payments.svg" alt=""></div>
+        <div>
+          <h3>Secure Payments</h3>
+          <p>uShip Payments ensures you're in control of your money until delivery is made.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="f-icon"><img src="assets/icon-protection.svg" alt=""></div>
+        <div>
+          <h3>uShip Protection Plan</h3>
+          <p>Access great rates and easy reimbursement with our all-risk uShip Protection Plan.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="f-icon"><img src="assets/icon-track.svg" alt=""></div>
+        <div>
+          <h3>Track Your Shipment</h3>
+          <p>Real-time status updates let you follow your big item from pickup to delivery.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Business ============ -->
+<section class="section business">
+  <div class="container">
+    <div>
+      <h2>Business Shipping for Furniture, Freight, Heavy Equipment, and More</h2>
+      <p class="b-sub">Find personalized business solutions for your delivery and return shipping needs.</p>
+      <p>From furniture to vehicles to freight, uShip delivers tailored solutions crafted to meet your unique business needs. Count on uShip as your reliable partner in shipping and drive success with every delivery.</p>
+      <ul>
+        <li>Expand nationwide</li>
+        <li>Diversify your carrier base</li>
+        <li>Elevate your delivery experience</li>
+        <li>API integration options</li>
+      </ul>
+      <a class="btn btn-primary" href="#">Find My Shipping Solution</a>
+    </div>
+    <div class="photo">
+      <img src="assets/business.webp" alt="Warehouse worker moving furniture">
+    </div>
+  </div>
+</section>
+
+<!-- ============ Logos bar ============ -->
+<section class="logos-bar">
+  <div class="container">
+    <h2>Trusted by the Best</h2>
+    <div class="logo-row">
+      <img src="assets/brand-etsy.svg" alt="Etsy">
+      <img src="assets/brand-hydrow.svg" alt="Hydrow">
+      <img src="assets/brand-chairish.svg" alt="Chairish">
+      <img src="assets/brand-ascendtms.svg" alt="AscendTMS">
+      <img src="assets/brand-ridenow.webp" alt="RideNow">
+    </div>
+  </div>
+</section>
+
+<!-- ============ Solutions ============ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Shipping Solutions for Growing Businesses</h2>
+    <p class="section-sub">Whether you're in the business of transporting furniture, vehicles, or freight, uShip has a tailored solution to fit your shipping needs.</p>
+    <div class="photo solutions-photo">
+      <img src="assets/solutions.webp" alt="Business shipping team">
+    </div>
+    <div class="sol-grid">
+      <div class="sol">
+        <div class="dot"><img src="assets/sol-inhome.svg" alt=""></div>
+        <h3>In-Home Delivery</h3>
+        <p><strong>For eCommerce retailers and small businesses in need of nationwide delivery and return services.</strong></p>
+        <p>Expand nationwide, reduce damages, and diversify your carrier base with uShip In-Home Delivery, the first-to-final mile solution that promises success with every shipment.</p>
+        <a class="text-link" href="#">Compare Options →</a>
+      </div>
+      <div class="sol">
+        <div class="dot"><img src="assets/sol-vehicle.svg" alt=""></div>
+        <h3>Vehicle Shipping</h3>
+        <p><strong>The simple, painless way to move cars and motos from your lot directly to your customer's driveway.</strong></p>
+        <p>uShip offers the easiest, most streamlined way for auto dealerships, auto auctions, and software vendors to ship more cars and motorcycles in less time. Discover the difference today.</p>
+        <a class="text-link" href="#">See My Options →</a>
+      </div>
+      <div class="sol">
+        <div class="dot"><img src="assets/sol-ltl.svg" alt=""></div>
+        <h3>LTL Freight</h3>
+        <p><strong>Streamline freight shipping for your business with uShip's LTL solutions.</strong></p>
+        <p>Find tech-enabled shipping tools built for your less-than-truckload freight shipments. Contact us today to find a solution that fits your needs, resources, and bandwidth.</p>
+        <a class="text-link" href="#">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Become a carrier ============ -->
+<section class="section carrier">
+  <div class="container">
+    <div class="photo">
+      <img src="assets/carrier.webp" alt="Carrier loading a shipment">
+    </div>
+    <div>
+      <h2>Become a Carrier</h2>
+      <p>Turn every mile into profit with uShip, where new shipments are listed every 30 seconds. Reduce empty miles, enhance route efficiency, and expand your business all in one place.</p>
+      <a class="btn btn-primary" href="#">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Dive deeper ============ -->
+<section class="section pillar-section">
+  <div class="container">
+    <h2 class="section-title">Dive Deeper into Big Shipping</h2>
+    <p class="section-sub">Find detailed guides and see recent shipping costs for furniture, cars, and more</p>
+    <div class="pillar-grid">
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/pillar-car.svg" alt=""></div>
+        <h3>Car Shipping Services</h3>
+        <div class="p-tags">Cars | RVs | Trailers | Parts</div>
+        <p>Get pro auto transport tips, plus learn about vehicle shipping costs and more.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/pillar-home.svg" alt=""></div>
+        <h3>Home &amp; Furniture Shipping</h3>
+        <div class="p-tags">Furniture | Appliances</div>
+        <p>Learn about furniture shipping services and see how to ship large household items with ease.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/pillar-ltl.svg" alt=""></div>
+        <h3>LTL Freight Services</h3>
+        <div class="p-tags">LTL | FTL</div>
+        <p>Master LTL freight shipping and see how to get the best rates for your business.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/pillar-boat.svg" alt=""></div>
+        <h3>Boat Shipping Services</h3>
+        <div class="p-tags">Powerboats | Sailboats</div>
+        <p>Get tips for safely transporting your boat, plus see how to find the best shipping price.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/pillar-moto.svg" alt=""></div>
+        <h3>Motorcycle Shipping Services</h3>
+        <div class="p-tags">Powersports | Mopeds</div>
+        <p>Get advice on how to ship your motorcycle like a pro and learn more about shipping costs.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/pillar-heavy.svg" alt=""></div>
+        <h3>Heavy Equipment Shipping</h3>
+        <div class="p-tags">Farm | Construction</div>
+        <p>Learn about uShip's heavy equipment shipping services and get moving today.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Explore shipping costs ============ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Explore Shipping Costs</h2>
+    <p class="section-sub">View recent shipments and learn about shipping prices for your transportation needs</p>
+    <div class="pillar-grid">
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/cost-car.svg" alt=""></div>
+        <h3>Cost to Ship Vehicles</h3>
+        <div class="p-tags">Cars | RVs | Trailers | Parts</div>
+        <p>See recent auto transport prices and get instant shipping quotes for your vehicle.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/cost-home.svg" alt=""></div>
+        <h3>Cost to Ship Home Goods</h3>
+        <div class="p-tags">Furniture | Appliances</div>
+        <p>View recent household goods shipments, plus calculate your cost to ship furniture and more.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/cost-freight.svg" alt=""></div>
+        <h3>Cost to Ship Freight</h3>
+        <div class="p-tags">LTL | FTL</div>
+        <p>Compare LTL prices, see recent deliveries, and access our freight shipping calculator.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/cost-boat.svg" alt=""></div>
+        <h3>Cost to Ship a Boat</h3>
+        <div class="p-tags">Powerboats | Sailboats</div>
+        <p>Explore boat shipping costs for powerboats, yachts, sailboats, and more.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/cost-moto.svg" alt=""></div>
+        <h3>Cost to Ship a Motorcycle</h3>
+        <div class="p-tags">Powersports | Mopeds</div>
+        <p>Discover motorcycle shipping prices and see what it could cost to ship your bike.</p>
+      </a>
+      <a class="pillar" href="#">
+        <div class="p-icon"><img src="assets/cost-heavy.svg" alt=""></div>
+        <h3>Cost to Ship Heavy Equipment</h3>
+        <div class="p-tags">Farm | Construction</div>
+        <p>Tackle heavy equipment shipping costs and easily calculate your transport price.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ App banner ============ -->
+<section class="app-banner">
+  <div class="container">
+    <div>
+      <h2>We know what you're shipping matters.</h2>
+      <p>Experience the uShip difference today.</p>
+      <a class="btn btn-primary" href="#" data-next>Get Started</a>
+    </div>
+    <div class="badges">
+      <img src="assets/app-badges.png" alt="Download the uShip app on the App Store and Google Play">
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list" style="margin-top:36px">
+      <details>
+        <summary>How does uShip work?</summary>
+        <p class="faq-a">Unlike traditional brokers or transport companies, uShip is an online shipping marketplace that connects users with thousands of professional and independent carriers on one platform. Fueled by 20 years of pricing data and a nationwide network of over 35,000 active carriers, we're able to provide transparent, competitive pricing that takes the guesswork out of big shipping.</p>
+      </details>
+      <details>
+        <summary>Why do shipping prices vary on uShip?</summary>
+        <p class="faq-a">Many factors can affect shipping prices, including distance, item size and weight, fuel costs, seasonality, and available truck space along a carrier's route. Since uShip is an online shipping marketplace, multiple carriers can submit quotes for the same shipment, giving you a range of pricing options to compare and helping you find a competitive price.</p>
+      </details>
+      <details>
+        <summary>Is uShip legit and how are carriers vetted?</summary>
+        <p class="faq-a">Yes, uShip is a legitimate online shipping marketplace that connects customers with independent carriers who compete for shipments. Instead of assigning a single shipping company, uShip gives you tools to review carriers, compare quotes, and choose the option that best fits your needs.</p>
+      </details>
+      <details>
+        <summary>Is it safe to ship with uShip?</summary>
+        <p class="faq-a">Absolutely! At uShip, trust and safety are our top priorities, and we offer several protective measures to ensure the security of your shipment and payment. Our comprehensive review system and partnership with SaferWatch make it easy to find reliable carriers who meet your standards for compliance and safety.</p>
+      </details>
+      <details>
+        <summary>What happens after I accept a quote?</summary>
+        <p class="faq-a">After you accept a quote on uShip, your shipment is booked, and you'll be connected directly with your chosen carrier. From your Booking Confirmation page, you can review shipment details, access the carrier's contact information, and coordinate pickup and delivery plans.</p>
+      </details>
+      <details>
+        <summary>What happens if something goes wrong or my shipment is damaged?</summary>
+        <p class="faq-a">Damage and theft during shipments booked on uShip are uncommon, but we still provide several layers of protection to help give you peace of mind. Many shipments are eligible for the uShip Protection Plan at checkout, which offers cargo protection in case your item is damaged, lost, or stolen during transit.</p>
+      </details>
+      <details>
+        <summary>Is it better to ship your vehicle or drive it yourself?</summary>
+        <p class="faq-a">It depends on the distance, your timeline, and how much time and effort you want to spend on the trip. Driving your vehicle yourself may seem cheaper at first, but expenses like fuel, lodging, meals, and wear and tear can add up quickly on long-distance moves.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ From the experts ============ -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">From the Shipping Experts</h2>
+    <div class="experts-list" style="margin-top:36px">
+      <a href="#">Gain Shipping Peace of Mind with the uShip Protection Plan</a>
+      <a href="#">Simplifying Bulky Delivery Challenges with uShip's Oversized Shipping Solutions</a>
+      <a href="#">Explore uShip's Diverse Vehicle Shipping Services: Cars, ATVs &amp; More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+      </div>
+      <div>
+        <h4>Cost to Ship</h4>
+        <ul class="inline-list">
+          <li><a href="#">Vehicles</a></li>
+          <li><a href="#">Motorcycles</a></li>
+          <li><a href="#">Furniture</a></li>
+          <li><a href="#">Freight</a></li>
+          <li><a href="#">Boats</a></li>
+          <li><a href="#">Heavy Equipment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+      <div class="legal-links">
+        <a href="#">uShip User Agreement</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Site Map</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complete Booking — uShip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="co-page">
+
+<!-- ============ Header (logo only) ============ -->
+<header class="site-header">
+  <div class="container" style="height:70px">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+  </div>
+</header>
+
+<main class="co-main">
+  <div class="container co-layout">
+
+    <div class="lp-card co-card">
+      <h1 class="co-title">Complete Booking</h1>
+
+      <section class="co-section">
+        <div class="co-sec-head">
+          <h2>Shipment Details</h2>
+          <span class="co-expand">&#8964;</span>
+        </div>
+        <p class="co-shipment-line" id="co-shipment">Bedframe, Austin, TX 78728 to Albuquerque, NM 87111</p>
+      </section>
+
+      <section class="co-section">
+        <h2 class="co-h2">uShip Protection Plan</h2>
+        <div class="co-plan-card">
+          <img class="co-seal" src="assets/figma/protection-seal.png" alt="uShip Protection Plan seal">
+          <div>
+            <h3>Loss happens. Protect yourself. Sleep tight.</h3>
+            <ul>
+              <li>Protection Plans as low as $50</li>
+              <li>Settle cases quickly</li>
+              <li>Cover damaged or lost freight</li>
+            </ul>
+            <a class="co-link" href="#">Learn More</a>
+          </div>
+        </div>
+        <p class="co-select-label">Select an option</p>
+        <div class="co-divider"></div>
+
+        <label class="co-radio-card selected" id="opt-protect">
+          <input type="radio" name="protection" checked>
+          <span class="co-radio-body">
+            <strong>Include Shipping Protection <span class="co-badge-rec">Recommended</span></strong>
+            <span>I agree to <a class="co-link" href="#">uShip's Shipping Protection Terms &amp; Conditions</a></span>
+          </span>
+        </label>
+
+        <label class="co-radio-card" id="opt-decline">
+          <input type="radio" name="protection">
+          <span class="co-radio-body">
+            <strong>Decline Shipping Protection</strong>
+            <span class="co-muted">I acknowledge my carrier's liability may not cover full value of my item(s) and claim processing time may not meet my time frame needs.</span>
+          </span>
+        </label>
+
+        <div class="co-value-group" id="co-value-wrap">
+          <span class="co-addon">$</span>
+          <input class="co-value" id="co-value" value="500" inputmode="numeric">
+          <span class="co-addon">.00</span>
+        </div>
+        <p class="co-muted co-help">Enter the value of your item(s) or the amount you wish to cover.</p>
+      </section>
+
+      <section class="co-section">
+        <h2 class="co-h2">Choose a payment method</h2>
+        <div class="co-pay-head">
+          <span>Pay with Credit or Debit Cards</span>
+          <span>Expirations</span>
+        </div>
+        <label class="co-radio-card co-pay-row selected" id="pay-card">
+          <input type="radio" name="payment" checked>
+          <span class="co-pay-body">
+            <img src="assets/figma/visa.png" alt="Visa">
+            <strong>&#8226;&#8226;&#8226;&#8226;4242</strong>
+            <span class="co-exp">09/2028</span>
+          </span>
+        </label>
+        <label class="co-radio-card co-pay-row" id="pay-new">
+          <input type="radio" name="payment">
+          <span class="co-pay-body"><strong>Use New Card</strong></span>
+        </label>
+        <p class="co-muted co-help">This card will be saved as your default payment method.</p>
+      </section>
+
+      <section class="co-section">
+        <h2 class="co-h2" style="letter-spacing:0">Cancellation Policy</h2>
+        <p class="co-muted">In the event of a cancellation, you will receive:</p>
+        <ul class="co-refund-list"><li>An automatic refund of $<span id="co-refund">121.65</span></li></ul>
+        <p class="co-muted co-soft">Please note that any account credit applied toward the payment of this shipment will return to your account and is non-refundable. All other credits are refundable upon request.</p>
+        <label class="co-agree">
+          <input type="checkbox" id="co-agree">
+          <span>I agree to uShip's <a class="co-link" href="#">User Agreement</a> and <a class="co-link" href="#">Privacy Policy</a></span>
+        </label>
+        <p class="co-carrier-terms">By completing this booking request, I agree to the Carrier's terms and conditions located within the Carrier's quote for my shipment. I also agree that this rate is based on the information I have provided.</p>
+      </section>
+
+      <div class="co-submit-wrap">
+        <a class="ls-continue" id="co-book" href="#" aria-disabled="true">Complete Booking</a>
+      </div>
+    </div>
+
+    <aside class="lp-rail co-rail">
+      <div class="lp-card lp-offer">
+        <h3>Shipment Price</h3>
+        <div class="lp-offer-row">
+          <span class="lp-label">Price</span>
+          <span class="lp-offer-num"><sup>$</sup><span id="co-price">313</span></span>
+        </div>
+        <div class="lp-offer-row">
+          <span class="lp-label">uShip Fee</span>
+          <span class="lp-offer-num"><sup>$</sup><span id="co-fee">34</span></span>
+        </div>
+        <div class="lp-offer-row" id="co-prot-row">
+          <span class="lp-label">Shipping Protection</span>
+          <span class="lp-offer-num"><sup>$</sup><span id="co-prot">250</span></span>
+        </div>
+        <div class="lp-offer-divider"></div>
+        <div class="lp-offer-row">
+          <span class="lp-label">Total</span>
+          <span class="lp-offer-num co-total"><sup>$</sup><span id="co-total">597</span></span>
+        </div>
+        <div class="ls-demo-alert">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#027cb1" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="#027cb1" stroke="none"/></svg>
+          <p>Pricing shown here is for demo purposes only. Please <a href="#">contact uShip</a> with any pricing questions.</p>
+        </div>
+      </div>
+      <div class="lp-card lp-shield">
+        <svg width="44" height="52" viewBox="0 0 44 52" fill="none" stroke="#027cb1" stroke-width="2.5"><path d="M22 2l18 7v16c0 12-8 20-18 25C12 45 4 37 4 25V9l18-7z"/><path d="M14 26l6 6 11-12" stroke-linecap="round"/></svg>
+        <h3>Ship with Confidence</h3>
+        <p>Enjoy peace of mind knowing that uShip is the safest and most secure way to ship. <strong>Guaranteed!</strong></p>
+        <a class="lp-link" href="#">Learn More</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<!-- ============ Slim footer ============ -->
+<footer class="auth-footer">
+  <div class="container">
+    <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+    <div class="legal-links">
+      <a href="#">uShip User Agreement</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Site Map</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

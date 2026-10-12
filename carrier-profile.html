@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carrier Profile — uShip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="lp-page cp-page">
+
+<!-- ============ Header (swapped to logged-in state by app.js) ============ -->
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+    <nav class="main-nav">
+      <a href="#">Getting Started</a>
+      <a href="#">Ship</a>
+      <a href="#">Find Shipments</a>
+      <a href="#">For Carriers</a>
+      <a href="#">For Business</a>
+    </nav>
+    <div class="header-auth">
+      <a href="signin.html">Sign In</a>
+      <a href="#">Join</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<main class="lp-main">
+  <div class="container cp-layout">
+
+    <!-- ===== Left sidebar ===== -->
+    <aside class="cp-side">
+      <div class="lp-card cp-id-card">
+        <span class="q-avatar cp-avatar" id="cp-avatar">A+</span>
+        <h1 id="cp-name-side">A+ Movers</h1>
+        <span class="cp-badge">Carrier</span>
+        <p class="q-stars cp-stars">
+          <img src="assets/figma/star-whole.svg" alt=""><img src="assets/figma/star-whole.svg" alt=""><img src="assets/figma/star-whole.svg" alt=""><img src="assets/figma/star-whole.svg" alt=""><img src="assets/figma/star-half.svg" alt="">
+          <strong id="cp-rating">4.7</strong>
+        </p>
+        <p class="cp-review-count"><span id="cp-reviews">728</span> reviews</p>
+        <p class="cp-again"><span class="cp-up">&#9650;</span> <strong>100%</strong></p>
+        <p class="cp-again-sub">of shippers would use again</p>
+      </div>
+      <div class="cp-bizinfo">
+        <h3>Business Info</h3>
+        <p>Trucks: <span id="cp-trucks">4</span></p>
+        <p>Drivers: <span id="cp-drivers">4</span></p>
+        <p>Trailer Type: None</p>
+        <a class="cp-side-link" href="#" id="cp-terms-link">View A+ Movers' Terms and Conditions</a>
+        <a class="cp-side-link cp-report" href="#">Report Profile Content</a>
+      </div>
+    </aside>
+
+    <!-- ===== Main column ===== -->
+    <div class="cp-main">
+      <h1 class="cp-title" id="cp-name">A+ Movers</h1>
+
+      <h4 class="lp-label">About the Company</h4>
+      <p class="cp-about" id="cp-about">A+ Movers is a family-owned transport company specializing in white-glove furniture delivery for the past 15 years. Our fleet consists of fully equipped sprinter vans and box trucks with blanket-wrap, straps, and liftgates. Every shipment is handled by a trained two-person crew, and we send photo updates at pickup and delivery. <a class="co-link" href="#">Show More</a></p>
+
+      <h4 class="lp-label cp-sp">Qualifications</h4>
+      <p class="cp-qual"><span class="cp-qual-ic">&#10003;</span> <span id="cp-years">15</span> Years on uShip</p>
+
+      <h4 class="lp-label cp-sp">Shipment Summary (Past 12 Months)</h4>
+      <div class="cp-stats">
+        <div class="cp-stat">
+          <h5>Completed Shipments</h5>
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#0288c2" stroke-width="2"><path d="M17 2L30 8.5v13L17 28 4 21.5v-13L17 2z"/><path d="M4 8.5L17 15l13-6.5M17 15v13"/><circle cx="26" cy="26" r="7" fill="#fff"/><path d="M22.5 26l2.5 2.5 4.5-4.5" stroke-linecap="round"/></svg>
+          <p class="cp-stat-num" id="cp-completed">91</p>
+          <p class="cp-stat-sub">in the last 12 months<br><span id="cp-total-ships">1,409</span> total since <span id="cp-since">2011</span></p>
+        </div>
+        <div class="cp-stat">
+          <h5>Top Category</h5>
+          <svg width="40" height="28" viewBox="0 0 40 28" fill="none" stroke="#0288c2" stroke-width="2"><path d="M7 13V7a4 4 0 0 1 4-4h18a4 4 0 0 1 4 4v6"/><path d="M7 13a4 4 0 0 0-4 4v3a3 3 0 0 0 3 3h28a3 3 0 0 0 3-3v-3a4 4 0 0 0-8 0v1H15v-1a4 4 0 0 0-8 0z"/><path d="M8 23v3M32 23v3" stroke-linecap="round"/></svg>
+          <p class="cp-stat-sub" style="margin-top:10px">All shipments were<br><strong>Household Goods</strong></p>
+        </div>
+        <div class="cp-stat">
+          <h5>Cancelled Shipments</h5>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#0288c2" stroke-width="2.2"><circle cx="16" cy="16" r="12.5"/><path d="M7.5 7.5l17 17"/></svg>
+          <p class="cp-stat-num" id="cp-cancel">3%</p>
+          <p class="cp-stat-sub">Look through cancellation reasons for more context</p>
+        </div>
+      </div>
+
+      <div class="cp-reviews lp-card">
+        <h2 class="cp-reviews-title">Reviews | <span id="cp-reviews2">728</span></h2>
+        <h4 class="lp-label">Filter Reviews</h4>
+        <div class="cp-filters">
+          <input class="cp-search" placeholder="&#128269; Search Reviews">
+          <select class="cp-filter-sel"><option>Rating</option><option>5 stars</option><option>4 stars</option><option>3 stars</option></select>
+          <select class="cp-filter-sel"><option>Completed Shipment</option><option>Household Goods</option><option>Furniture</option></select>
+          <a class="cp-clear" href="#">Clear All</a>
+        </div>
+        <div class="cp-chips">
+          <span>Service</span><span>Communication</span><span>Experience</span><span>Shipper</span><span>Pleasure</span><span>Cost</span><span>Expectations</span><span>Use</span><span>Bruce</span><span>Price</span><span>...</span>
+        </div>
+        <div class="cp-rev-head">
+          <p><span id="cp-reviews3">628</span> Reviews</p>
+          <label>Sort <select class="cp-filter-sel"><option>Newest</option><option>Oldest</option><option>Highest rated</option></select></label>
+        </div>
+        <div id="cp-review-list"></div>
+        <div class="cp-pager">&#171; <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">8</a> &#187;</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="lp-footer">
+  <div class="container">
+    <div class="lp-footer-top">
+      <nav>
+        <a href="#">How It Works</a>
+        <a href="#">Company</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Blog</a>
+      </nav>
+    </div>
+    <div class="lp-footer-bottom">
+      <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+      <div class="legal-links">
+        <a href="#">uShip User Agreement</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Site Map</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

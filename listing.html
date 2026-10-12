@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bedframe — uShip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="lp-page">
+
+<!-- ============ Header (swapped to logged-in state by app.js) ============ -->
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+    <nav class="main-nav">
+      <a href="#">Getting Started</a>
+      <a href="#">Ship</a>
+      <a href="#">Find Shipments</a>
+      <a href="#">For Carriers</a>
+      <a href="#">For Business</a>
+    </nav>
+    <div class="header-auth">
+      <a href="signin.html">Sign In</a>
+      <a href="#">Join</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<main class="lp-main">
+  <div class="container lp-layout">
+
+    <div class="lp-left">
+      <div class="lp-title-row">
+        <div>
+          <h1 id="lp-title">Bedframe</h1>
+          <p class="lp-byline"><a href="#" class="lp-name">Bryan</a> <span class="lp-sep">|</span> ID #991812527 <span class="lp-active">Active</span></p>
+        </div>
+        <div class="lp-actions">
+          <a class="lp-edit-btn" href="confirm-shipment.html">&#9998; Edit Shipment</a><button class="lp-edit-caret" aria-label="More">&#8964;</button>
+        </div>
+      </div>
+
+      <nav class="lp-tabs">
+        <a href="#" class="active" data-tab="summary">Summary</a>
+        <a href="#" data-tab="quotes">Quote <span class="lp-badge">1</span></a>
+        <a href="#" data-tab="questions">Questions <span class="lp-badge">2</span></a>
+      </nav>
+
+      <div class="lp-pane" id="tab-summary">
+      <div class="lp-top-grid">
+        <div class="lp-card lp-success">
+          <h2 class="lp-success-head"><img src="assets/figma/ihd-icon.svg" alt="IHD" class="ihd-mark"> Success!</h2>
+          <p class="lp-success-lede">Your shipment is now live in the marketplace with an offer price of $<span id="lp-offer-short">312.8</span></p>
+          <p>We will notify you when a service provider accepts your offer price, or if there are questions about your shipment. You'll have 24 hours or less to book when a service providers accepts your price.</p>
+          <h4 class="lp-label" style="margin-top:22px">Next Steps</h4>
+          <ul class="lp-steps">
+            <li><span class="lp-bullet done">&#10003;</span><span class="lp-step-text">Accept one of your <a href="#" data-tab-link="quotes">carrier quotes</a></span></li>
+            <li><span class="lp-bullet done">&#10003;</span><span class="lp-step-text">Answer <a href="#" data-tab-link="questions">questions</a> from carriers</span></li>
+            <li><span class="lp-bullet" id="step-contact">!</span><span class="lp-step-text">Add <a href="#" class="open-contact">contact information</a> for pickup and delivery</span></li>
+            <li><span class="lp-bullet">!</span><span class="lp-step-text">Add a photograph to your listing for carriers</span></li>
+          </ul>
+        </div>
+
+        <div class="lp-card lp-photos">
+          <svg width="40" height="34" viewBox="0 0 40 34" fill="none" stroke="#757575" stroke-width="2"><rect x="1" y="7" width="38" height="26" rx="3"/><path d="M12 7l3-5h10l3 5"/><circle cx="20" cy="20" r="7"/></svg>
+          <h3>There Are No Photos</h3>
+          <p>Add photos to book faster</p>
+          <a class="lp-link" href="#">Add Photos</a>
+          <p class="lp-filetypes">Accepted file types: PNG, JPG, JPEG (5MB each)</p>
+        </div>
+      </div>
+
+      <div class="lp-card lp-pud">
+        <div class="lp-pud-grid">
+          <div>
+            <h3>Pickup</h3>
+            <p class="lp-pud-edit"><span class="zip-arrow-s">&#8599;</span><a class="lp-link open-contact" href="#">&#9998; Edit Contact Details</a></p>
+            <p class="lp-addr" id="lp-from-addr">34<br>Austin, TX 78728 US<br>Residence / Home Business</p>
+            <p class="lp-dates"><svg class="ic" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#595959" stroke-width="1.5"><rect x="1.5" y="3" width="13" height="11.5" rx="1.5"/><path d="M1.5 6.5h13M5 1.5v3M11 1.5v3"/></svg> <strong id="lp-pickup-dates">10/9 - 10/10</strong></p>
+          </div>
+          <div>
+            <h3>Delivery</h3>
+            <p class="lp-pud-edit"><span class="zip-arrow-s">&#8600;</span><a class="lp-link open-contact" href="#">&#9998; Edit Contact Details</a></p>
+            <p class="lp-addr" id="lp-to-addr">234<br>Albuquerque, NM 87111 US<br>Residence / Home Business</p>
+            <p class="lp-dates"><svg class="ic" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#595959" stroke-width="1.5"><rect x="1.5" y="3" width="13" height="11.5" rx="1.5"/><path d="M1.5 6.5h13M5 1.5v3M11 1.5v3"/></svg> <strong id="lp-delivery-dates">10/21 - 10/22</strong></p>
+          </div>
+        </div>
+        <div class="lp-distance"><svg class="ic" width="20" height="16" viewBox="0 0 20 16" fill="none" stroke="#595959" stroke-width="1.5"><path d="M1.5 2h10v9h-10zM11.5 5h4l2.5 3v3h-6.5z"/><circle cx="5" cy="13" r="1.8"/><circle cx="15" cy="13" r="1.8"/></svg> Est. <strong id="lp-miles">693 mi.</strong> from pickup to delivery</div>
+      </div>
+
+      <div class="lp-card lp-details">
+        <div class="lp-details-head">
+          <h2>Shipment Details</h2>
+          <span class="lp-caret">&#8963;</span>
+        </div>
+        <div class="lp-detail-row">
+          <div class="lp-detail-key">Description</div>
+          <div class="lp-detail-body">
+            <p class="lp-detail-title" id="lp-desc">Bedframe</p>
+            <div class="lp-kv-grid">
+              <div><h5>Category</h5><p>Furniture</p></div>
+              <div><h5>Total Weight</h5><p id="lp-weight">111 lbs</p></div>
+              <div><h5>Total Quantity</h5><p id="lp-qty">1</p></div>
+              <div><h5>Crated</h5><p>No</p></div>
+              <div><h5>Stackable</h5><p>No</p></div>
+              <div><h5>Palletized</h5><p>No</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="lp-detail-row">
+          <div class="lp-detail-key">Items</div>
+          <div class="lp-detail-body" id="lp-items">
+            <p class="lp-detail-title">Item 1: Bedframe</p>
+            <div class="lp-kv-grid">
+              <div><h5>Weight</h5><p>111 lbs</p></div>
+              <div><h5>Quantity</h5><p>1</p></div>
+              <div><h5>Dimensions</h5><p>12 x 12 x 21 in</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="lp-detail-row">
+          <div class="lp-detail-key">Additional Info</div>
+          <div class="lp-detail-body">
+            <h5 class="lp-label">Requested Service Types</h5>
+            <p class="lp-service">&#10003; Blanket Wrap</p>
+          </div>
+        </div>
+      </div>
+      </div><!-- /tab-summary -->
+
+      <!-- ============ Quote tab (Figma 418:5578) ============ -->
+      <div class="lp-pane" id="tab-quotes" hidden>
+        <div class="lp-card q-card">
+          <div class="q-head">
+            <div class="q-carrier">
+              <span class="q-avatar">A+</span>
+              <div>
+                <p class="q-name">A+ Movers</p>
+                <p class="q-stars">
+                  <img src="assets/figma/star-whole.svg" alt=""><img src="assets/figma/star-whole.svg" alt=""><img src="assets/figma/star-whole.svg" alt=""><img src="assets/figma/star-whole.svg" alt=""><img src="assets/figma/star-half.svg" alt="">
+                  <a href="#">(847)</a>
+                </p>
+              </div>
+            </div>
+            <div class="q-service">
+              <p class="q-service-type">Blanket Wrap</p>
+              <p><strong>Estimated Pickup</strong><br><span id="q-pickup">Oct 9 - Oct 10</span></p>
+            </div>
+            <div class="q-price-box">
+              <p class="q-amount"><sup>$</sup><span id="q-amount">313</span></p>
+              <div class="q-btns">
+                <a class="q-accept" href="#">Accept</a>
+                <a class="q-decline" href="#">Decline</a>
+              </div>
+            </div>
+          </div>
+          <div class="q-stats">
+            <span><img src="assets/figma/m-star.svg" alt=""> 750<small>Feedback Score</small></span>
+            <span><img src="assets/figma/m-check.svg" alt=""> 95%<small>Positive Feedback</small></span>
+            <span><img src="assets/figma/m-xsquare.svg" alt=""> 10%<small>Cancel Rate</small></span>
+            <span class="q-stats-div"></span>
+            <span><img src="assets/figma/m-message.svg" alt=""> 2<small>Questions</small></span>
+            <a class="q-hide" href="#">Hide Quote Details</a>
+          </div>
+          <div class="q-detail">
+            <nav class="q-tabs">
+              <a href="#" class="active" data-qtab="details">Quote Details</a>
+              <a href="#" data-qtab="questions">Quote Questions <span class="lp-badge">1</span></a>
+            </nav>
+            <div class="q-pane" data-qpane="details">
+            <div class="q-detail-grid">
+              <div>
+                <h5 class="lp-label">Time Frame</h5>
+                <p class="q-tf">Pickup: <strong id="q-tf-pickup">Estimated Oct 9, 2026</strong></p>
+                <p class="q-tf">Delivery: <strong id="q-tf-delivery">Estimated Oct 21, 2026</strong></p>
+                <div class="q-breakdown">
+                  <h5 class="lp-label">Breakdown</h5>
+                  <div class="q-row"><span class="lp-label">Quote</span><strong>$<span id="q-b-quote">313</span></strong></div>
+                  <div class="q-row"><span class="lp-label">uShip Fee</span><strong>$<span id="q-b-fee">34</span></strong></div>
+                  <div class="q-row q-row-total"><span class="lp-label">Total</span><strong>$<span id="q-b-total">347</span></strong></div>
+                </div>
+                <h5 class="lp-label q-sp">Additional Payment Terms</h5>
+                <p class="q-val">At Delivery</p>
+                <h5 class="lp-label q-sp">Payment Accepted</h5>
+                <p class="q-val">uShip Payments</p>
+                <h5 class="lp-label q-sp">Vehicle Type</h5>
+                <p class="q-val">Sprinter Van</p>
+                <h5 class="lp-label q-sp">Service Type</h5>
+                <p class="q-val">Blanket Wrap</p>
+              </div>
+              <div>
+                <p class="q-meta">Quote Placed <span id="q-placed">10/9/2026 9:07 AM CST</span><br>Quote ID: 1234567</p>
+                <h5 class="lp-label q-sp">Note to Shipping Customer</h5>
+                <p class="q-note">***width and weight permits included*** BID NOTES: We are a commercially licensed international logistics and transportation company - all shipments are cargo insured during transport, and if required for your shipment any applicable taxes are also included. Bids are for transportation only though - loading/unloading is not included so a dock/ramp/forklift are always required, or for drivable machinery/vehicles you could also arrange a tilt-n-load tow truck to assist. Prices are based upon the information you have provided, overages will be subject to additional charges. Please review the terms &amp; conditions on our profile page prior to booking. If you have any questions about our company, operating authorities, cargo insurance or anything else, please feel free to ask. Nick - A+ Movers</p>
+                <a class="q-terms" href="#">View A+ Movers' Terms &amp; Conditions</a>
+              </div>
+            </div>
+            </div><!-- /q-pane details -->
+            <div class="q-pane" data-qpane="questions" hidden>
+              <div class="qq-item">
+                <div class="qq-head">
+                  <div class="qq-who-wrap">
+                    <span class="qq-avatar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
+                    <div>
+                      <p class="qa-who">Service Provider</p>
+                      <p class="qa-when" id="qq-date">Oct 12, 2026, 10:42 AM</p>
+                    </div>
+                  </div>
+                  <button class="qq-flag" aria-label="Flag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M5 21V4h12l-3 5 3 5H5"/></svg></button>
+                </div>
+                <p class="qa-text">Greetings! Is this your first time on the uShip platform? Do you have any specific questions about this shipment? When will the bedframe be ready for pick-up? Best Regards</p>
+                <a class="qq-reply" href="#">Reply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /tab-quotes -->
+
+      <!-- ============ Questions tab (Figma 418:6057) ============ -->
+      <div class="lp-pane" id="tab-questions" hidden>
+        <div class="lp-card qa-card">
+          <div class="qa-thread">
+            <div class="qa-msg">
+              <div class="qa-msg-head">
+                <div><p class="qa-who">Service Provider</p><p class="qa-when">Oct 9, 2026, 10:42 AM</p></div>
+                <button class="qa-flag" aria-label="Flag"><img src="assets/figma/i-flag.svg" alt=""></button>
+              </div>
+              <p class="qa-text">Greetings! Is this your first time on the uShip platform? Do you have any specific questions about this shipment? When will the bedframe be ready for pick-up? Best Regards</p>
+              <a class="qa-reply" href="#">Reply</a>
+            </div>
+            <div class="qa-nested">
+              <div class="qa-msg">
+                <div class="qa-msg-head">
+                  <div><p class="qa-who">Bryan L.</p><p class="qa-when">Oct 9, 2026, 11:15 AM</p></div>
+                </div>
+                <p class="qa-text">Hi! Yes, this is my first IHD shipment. The bedframe is disassembled and ready to go — it can be picked up any time during the posted window. It's on the ground floor with easy driveway access.</p>
+              </div>
+              <div class="qa-msg">
+                <div class="qa-msg-head">
+                  <div><p class="qa-who">Service Provider</p><p class="qa-when">Oct 9, 2026, 11:40 AM</p></div>
+                  <button class="qa-flag" aria-label="Flag"><img src="assets/figma/i-flag.svg" alt=""></button>
+                </div>
+                <p class="qa-text">Perfect, thank you! We'll bring blankets and straps for blanket-wrap service. Our quote covers room-of-choice placement at delivery as well.</p>
+                <a class="qa-reply" href="#">Reply</a>
+              </div>
+            </div>
+            <div class="qa-msg qa-last">
+              <div class="qa-msg-head">
+                <div><p class="qa-who">Service Provider</p><p class="qa-when">Oct 9, 2026, 12:02 PM</p></div>
+                <button class="qa-flag" aria-label="Flag"><img src="assets/figma/i-flag.svg" alt=""></button>
+              </div>
+              <p class="qa-text">Is there parking available for a sprinter van at the delivery address, or should we plan for street parking? Thanks!</p>
+              <a class="qa-reply" href="#">Reply</a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /tab-questions -->
+    </div>
+
+    <aside class="lp-rail">
+      <div class="lp-card lp-offer">
+        <h3>Shipment Price<br>Breakdown</h3>
+        <div class="lp-offer-row">
+          <span class="lp-blabel">Offer Amount</span>
+          <span class="lp-offer-num"><sup>$</sup><span id="lp-offer">454</span></span>
+        </div>
+        <div class="lp-offer-row lp-row-line">
+          <span class="lp-blabel">uShip Fee</span>
+          <span class="lp-offer-num"><sup>$</sup><span id="lp-fee">34.05</span></span>
+        </div>
+        <div class="lp-offer-row">
+          <span class="lp-blabel">Total</span>
+          <span class="lp-offer-num lp-num-total"><sup>$</sup><span id="lp-total">488.05</span></span>
+        </div>
+        <p class="lp-offer-meta">4 days, 23 hours left on listing<br>Listed <span id="lp-listed">Jun 25, 2026</span></p>
+        <p class="lp-seeall"><a href="#" data-tab-link="quotes">See All Quotes</a></p>
+        <p class="lp-offer-final">Final price determined on checkout</p>
+      </div>
+      <div class="lp-card lp-watch">
+        <div><h5 class="lp-label">Watching</h5><p><img src="assets/figma/i-eye.svg" alt="" class="lp-w-ic"> <strong>2</strong></p></div>
+        <div class="lp-watch-div"></div>
+        <div><h5 class="lp-label">Quotes</h5><p><img src="assets/figma/i-banknote.svg" alt="" class="lp-w-ic"> <strong>1</strong></p></div>
+      </div>
+      <div class="lp-card lp-payhow">
+        <img src="assets/figma/i-payment.svg" alt="" class="lp-pay-icon">
+        <h3>Payment How To</h3>
+        <ol>
+          <li><img src="assets/figma/step-1.svg" alt="1">Simply enter your payment info upon booking.</li>
+          <li><img src="assets/figma/step-2.svg" alt="2">Once you've prepaid in full for your shipment, you'll receive a payment code.</li>
+          <li><img src="assets/figma/step-3.svg" alt="3">Give the payment code to your service provider at delivery.</li>
+        </ol>
+        <a class="lp-link" href="#">Learn More</a>
+      </div>
+      <div class="lp-card lp-shield">
+        <svg width="44" height="52" viewBox="0 0 44 52" fill="none" stroke="#027cb1" stroke-width="2.5"><path d="M22 2l18 7v16c0 12-8 20-18 25C12 45 4 37 4 25V9l18-7z"/><path d="M14 26l6 6 11-12" stroke-linecap="round"/></svg>
+        <h3>Ship with Confidence</h3>
+        <p>Enjoy peace of mind knowing that uShip is the safest and most secure way to ship. <strong>Guaranteed!</strong></p>
+        <a class="lp-link" href="#">Learn More</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<!-- ============ Contact Information drawer (Figma 1648:14799) ============ -->
+<div class="drawer-overlay" id="drawer-overlay" hidden></div>
+<aside class="drawer" id="contact-drawer" hidden aria-label="Contact information">
+  <div class="drawer-head">
+    <h2>Contact Information</h2>
+    <button class="drawer-close" id="drawer-close" aria-label="Close">&#10005;</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-alert">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#027cb1" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="#027cb1" stroke="none"/></svg>
+      <p>To edit the city, state, or zip code, use <a href="confirm-shipment.html">Edit Shipment</a>. Changes may cancel existing quotes/offers and affect the price.</p>
+    </div>
+    <section class="drawer-sec">
+      <h3>Pickup Information</h3>
+      <div class="drawer-grid">
+        <div class="dg-wide"><label class="ls-label">Full Contact Name</label><input class="drawer-input dn-name" placeholder="Full contact name"></div>
+        <div><label class="ls-label">Phone Number</label><input class="drawer-input" value="505-573-8796"></div>
+        <div class="dg-wide"><label class="ls-label">Pick Up Street Address</label><input class="drawer-input" value="9907 Denali RD NE"></div>
+        <div><label class="ls-label">C/O, Apt, Suite, Unit</label><input class="drawer-input" value="#34"></div>
+      </div>
+    </section>
+    <section class="drawer-sec drawer-sec-line">
+      <h3>Delivery Information</h3>
+      <div class="drawer-grid">
+        <div class="dg-wide"><label class="ls-label">Full Contact Name</label><input class="drawer-input dn-name" placeholder="Full contact name"></div>
+        <div><label class="ls-label">Phone Number</label><input class="drawer-input" value="505-573-8796"></div>
+        <div class="dg-wide"><label class="ls-label">Delivery Street Address</label><input class="drawer-input" value="2114 Juniper Hill RD"></div>
+        <div><label class="ls-label">C/O, Apt, Suite, Unit</label><input class="drawer-input" value="#234"></div>
+      </div>
+    </section>
+  </div>
+  <div class="drawer-foot">
+    <button class="drawer-cancel" id="drawer-cancel">Cancel</button>
+    <button class="drawer-save" id="drawer-save">Save</button>
+  </div>
+</aside>
+
+<!-- ============ Footer ============ -->
+<footer class="lp-footer">
+  <div class="container">
+    <div class="lp-footer-top">
+      <nav>
+        <a href="#">How It Works</a>
+        <a href="#">Company</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Blog</a>
+      </nav>
+      <div class="lp-social">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M13.5 9H16l.5-3h-3V4.5c0-.9.3-1.5 1.6-1.5H16.6V.2C16.3.2 15.3 0 14.1 0 11.6 0 10 1.5 10 4.2V6H7v3h3v9h3.5V9z"/></svg></span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.4" fill="#fff" stroke="none"/></svg></span>
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L6 22H2.9l7.5-8.6L2.5 2h6.6l4.5 6.6L18.9 2zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20z"/></svg></span>
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2zM9.8 15.3V8.7l5.8 3.3-5.8 3.3z"/></svg></span>
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5a2.49 2.49 0 1 1 0 4.98 2.49 2.49 0 0 1 0-4.98zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></span>
+      </div>
+    </div>
+    <div class="lp-footer-bottom">
+      <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+      <div class="legal-links">
+        <a href="#">uShip User Agreement</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Site Map</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

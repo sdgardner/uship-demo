@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shipment Details — uShip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="ls-page cs-page">
+
+<!-- ============ Header (logo only) ============ -->
+<header class="site-header">
+  <div class="container" style="height:70px">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+  </div>
+</header>
+
+<!-- ============ Shipment summary bar ============ -->
+<div class="cs-summary">
+  <div class="container cs-summary-row">
+    <div class="cs-sum-col">
+      <h4>Your Shipment</h4>
+      <p class="cs-sum-main" id="sum-title">Bedframe</p>
+      <p class="cs-sum-sub" id="sum-weight">Total Weight: 111.0 lbs</p>
+    </div>
+    <div class="cs-sum-col">
+      <h4>Pickup &amp; Delivery</h4>
+      <p class="cs-sum-loc"><span class="zip-arrow">&#8599;</span><span id="sum-from">Austin, TX 78728</span></p>
+      <p class="cs-sum-loc"><span class="zip-arrow dn">&#8600;</span><span id="sum-to">Albuquerque, NM 87111</span></p>
+    </div>
+    <a class="cs-edit" href="list-shipment.html">Edit</a>
+    <div class="cs-price">
+      <h4>Your Price</h4>
+      <div class="cs-price-num"><sup>$</sup><span id="sum-price">313</span><small>Plus<br>Fees</small></div>
+    </div>
+  </div>
+</div>
+
+<main class="ls-main">
+  <div class="container ls-layout cs-layout">
+
+    <div class="ls-card">
+      <h2 class="ls-card-title">Shipment Details</h2>
+
+      <label class="ls-label" for="cs-title">Shipment Title</label>
+      <input class="ls-input" id="cs-title" value="Bedframe" style="max-width:600px">
+
+      <div class="cs-section">
+        <h3 class="cs-h3">Pickup &amp; Delivery Dates</h3>
+        <p class="ls-help">Edit your date range below. Choose a specific day by selecting the same date twice. Please choose dates before Friday, April 9, 2027.</p>
+        <div class="cs-dates">
+          <div><label class="ls-label">Earliest Pickup Date</label><input class="ls-input" type="date"></div>
+          <div><label class="ls-label">Latest Pickup Date</label><input class="ls-input" type="date"></div>
+          <div><label class="ls-label">Earliest Delivery Date</label><input class="ls-input" type="date"></div>
+          <div><label class="ls-label">Latest Delivery Date</label><input class="ls-input" type="date"></div>
+        </div>
+      </div>
+
+      <div class="cs-section">
+        <h3 class="cs-h3">Pickup Address</h3>
+        <label class="ls-label">Street Address</label>
+        <div class="ls-zip-wrap" style="max-width:none"><span class="zip-arrow">&#8599;</span><input class="ls-input ls-zip"></div>
+        <div class="cs-addr-row">
+          <div><label class="ls-label">Apt, Suite, Bldg (Optional)</label><input class="ls-input"></div>
+          <div><label class="ls-label">Location Type</label>
+            <select class="ls-select"><option>Residence</option><option>Business</option><option>Storage Facility</option></select>
+          </div>
+        </div>
+        <div class="cs-csz">
+          <div><label class="ls-label">City</label><input class="ls-input" id="from-city" value="Austin" disabled></div>
+          <div><label class="ls-label">State</label><input class="ls-input" id="from-state" value="TX" disabled></div>
+          <div><label class="ls-label">Zip</label><input class="ls-input" id="from-zip" value="78728" disabled></div>
+        </div>
+        <a class="cs-edit-link" href="list-shipment.html">&#9998; Edit City or Zip</a>
+      </div>
+
+      <div class="cs-section">
+        <h3 class="cs-h3">Delivery Address</h3>
+        <label class="ls-label">Street Address</label>
+        <div class="ls-zip-wrap" style="max-width:none"><span class="zip-arrow dn">&#8600;</span><input class="ls-input ls-zip"></div>
+        <div class="cs-addr-row">
+          <div><label class="ls-label">Apt, Suite, Bldg (Optional)</label><input class="ls-input"></div>
+          <div><label class="ls-label">Location Type</label>
+            <select class="ls-select"><option>Residence</option><option>Business</option><option>Storage Facility</option></select>
+          </div>
+        </div>
+        <div class="cs-csz">
+          <div><label class="ls-label">City</label><input class="ls-input" id="to-city" value="Albuquerque" disabled></div>
+          <div><label class="ls-label">State</label><input class="ls-input" id="to-state" value="NM" disabled></div>
+          <div><label class="ls-label">Zip</label><input class="ls-input" id="to-zip" value="87111" disabled></div>
+        </div>
+        <a class="cs-edit-link" href="list-shipment.html">&#9998; Edit City or Zip</a>
+      </div>
+
+      <div class="cs-section">
+        <h3 class="cs-h3">Support Service Type <span class="cs-help-circle">?</span></h3>
+        <label class="cs-check"><input type="checkbox" checked> Blanket Wrap (Most Common)</label>
+        <label class="cs-check"><input type="checkbox"> Less than Load (LTL) Freight and Packaging</label>
+        <label class="cs-check"><input type="checkbox"> Less than Load (LTL) Standard</label>
+      </div>
+
+      <div class="cs-section">
+        <h3 class="cs-h3">Additional Details (Optional)</h3>
+        <label class="ls-label">Photos</label>
+        <label class="cs-dropzone">
+          <input type="file" accept="image/*" multiple hidden>
+          <span class="cs-drop-plus">&#8853;</span>
+          <span>Drop photos here or click to upload</span>
+        </label>
+        <p class="ls-help">Upload up to 10 photos (5MB each).</p>
+
+        <label class="ls-label" style="margin-top:18px">Special Instructions</label>
+        <textarea class="ls-input cs-textarea" id="cs-notes" maxlength="1200" placeholder="Use the alley, call before you arrive, fragile shipment"></textarea>
+        <div class="cs-notes-row">
+          <span class="ls-help">Do not include personal contact information in this section.</span>
+          <span class="ls-help"><span id="cs-count">0</span>/1200</span>
+        </div>
+        <label class="cs-check cs-check-sm"><input type="checkbox"> Save these instructions for next time</label>
+      </div>
+
+      <div class="cs-section">
+        <h3 class="cs-h3">Reference Numbers</h3>
+        <p class="ls-help">You can add VIN, Invoice, Purchase Order, Sales Order, SKU or Other Numbers if needed</p>
+        <button type="button" class="ls-add cs-ref-btn">&#8853; Add Reference Number</button>
+      </div>
+
+      <div class="ls-continue-wrap cs-create-wrap">
+        <a class="ls-continue enabled" id="create-listing" href="#" data-next>Create a Listing</a>
+      </div>
+    </div>
+
+    <aside class="ls-aside cs-aside">
+      <div class="cs-tip" style="margin-top:210px">
+        <h3>Timing is Everything</h3>
+        <p>Your dates for pickup and delivery help carriers navigate their schedules so you can make the perfect match.</p>
+      </div>
+      <div class="cs-tip" style="margin-top:190px">
+        <h3>Location, Location, Location</h3>
+        <p>Accurate locations let carriers know where they're going, how to prepare for safe transport, and what to expect when they arrive.</p>
+      </div>
+      <div class="cs-tip" style="margin-top:360px">
+        <h3>Know Your Service Options</h3>
+        <p>Make sure you select the best service type for your furniture. Blanket Wrap is most commonly chosen for furniture.</p>
+      </div>
+      <div class="cs-tip" style="margin-top:130px">
+        <h3>Why Photos Matter</h3>
+        <p>Shipments with photos book faster by giving carriers a better understanding of the item you are shipping.</p>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<!-- ============ Slim footer ============ -->
+<footer class="auth-footer">
+  <div class="container">
+    <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+    <div class="legal-links">
+      <a href="#">uShip User Agreement</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Site Map</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Help</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

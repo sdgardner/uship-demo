@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shipment Booked — uShip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="co-page bk-page">
+
+<!-- ============ Header (logo only) ============ -->
+<header class="site-header">
+  <div class="container" style="height:70px">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+  </div>
+</header>
+
+<main class="co-main">
+  <div class="container co-layout">
+
+    <div class="lp-card co-card">
+      <h1 class="bk-title">Shipment booked</h1>
+
+      <div class="bk-alert">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#00902c"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+        <strong>Congrats! Your shipment is booked.</strong>
+      </div>
+
+      <section class="co-section bk-details">
+        <div class="co-sec-head">
+          <h2>Shipment Details</h2>
+          <span class="co-expand">&#8963;</span>
+        </div>
+        <div class="bk-detail-grid">
+          <div>
+            <h5 class="bk-key">Shipment Title</h5>
+            <p id="bk-title">Wooden Coffee Table</p>
+            <h5 class="bk-key" style="margin-top:20px">Pickup Timeframe</h5>
+            <p id="bk-timeframe">Between 05/06/2026 and 05/09/2026</p>
+          </div>
+          <div>
+            <h5 class="bk-key"><span class="zip-arrow-s" style="color:#0288c2">&#8599;</span> Pickup Information</h5>
+            <p id="bk-pickup">9907 Denali RD NE<br>Austin, TX, 78728</p>
+            <h5 class="bk-key" style="margin-top:20px"><span class="zip-arrow-s" style="color:#0288c2">&#8600;</span> Delivery Information</h5>
+            <p id="bk-delivery">2114 Juniper Hill RD<br>Albuquerque, NM, 87111</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="co-section">
+        <div class="co-sec-head">
+          <h2>Post Booking Tips</h2>
+          <span class="co-expand">&#8964;</span>
+        </div>
+        <ul class="bk-tips">
+          <li>Contact your carrier within 24 hours to confirm pickup and delivery details</li>
+          <li>Prepare your item(s) by securing loose parts and packaging if needed</li>
+          <li>Take clear photos of your item(s), including any existing damage</li>
+          <li>Monitor and respond to messages from your carrier</li>
+        </ul>
+        <p class="bk-help">Questions? <a class="co-link" href="#"><strong>Visit Help Center</strong></a></p>
+      </section>
+
+      <div class="co-submit-wrap">
+        <a class="ls-continue enabled" href="listing.html">View Listing</a>
+      </div>
+    </div>
+
+    <aside class="lp-rail co-rail">
+      <div class="lp-card bk-provider">
+        <h3>Service Provider</h3>
+        <span class="q-avatar bk-avatar" id="bk-carrier-avatar">A+</span>
+        <p class="bk-carrier-name" id="bk-carrier">A+ Movers</p>
+        <p class="bk-contact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#858585" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c1 .3 1.9.5 2.9.7a2 2 0 0 1 1.7 2z"/></svg> <strong>(512) 555-5555</strong></p>
+        <p class="bk-contact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#858585" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg> <strong id="bk-email">aplusmovers@xyz.com</strong></p>
+      </div>
+      <div class="lp-card lp-offer">
+        <h3 style="text-transform:none;letter-spacing:0;font-size:18px">Shipment Price</h3>
+        <div class="lp-offer-row">
+          <span class="lp-label">Price</span>
+          <span class="lp-offer-num"><sup>$</sup><span id="bk-price">375</span></span>
+        </div>
+        <div class="lp-offer-row">
+          <span class="lp-label">uShip Fee</span>
+          <span class="lp-offer-num"><sup>$</sup><span id="bk-fee">60</span></span>
+        </div>
+        <div class="lp-offer-row" id="bk-prot-row">
+          <span class="lp-label">uShip Protection Plan</span>
+          <span class="lp-offer-num"><sup>$</sup><span id="bk-prot">51</span></span>
+        </div>
+        <div class="lp-offer-divider"></div>
+        <div class="lp-offer-row">
+          <span class="lp-label">Total</span>
+          <span class="lp-offer-num co-total"><sup>$</sup><span id="bk-total">486</span></span>
+        </div>
+        <div class="ls-demo-alert">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#027cb1" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="#027cb1" stroke="none"/></svg>
+          <p>Pricing shown here is for demo purposes only. Please <a href="#">contact uShip</a> with any pricing questions.</p>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ===== Partner offers (Figma 1542:4214) ===== -->
+  <div class="container bk-offers">
+    <div class="bk-offers-head">
+      <h2>Make the most of your shipment</h2>
+      <p>Optional add-ons from uShip's partner network. None of these change your shipment.</p>
+    </div>
+    <div class="bk-disclosure">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 11v5" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="#4b5563" stroke="none"/></svg>
+      <p><strong>Offers from uShip partners.</strong> The following are paid placements from third-party companies, not uShip services. uShip may earn a referral fee if you sign up. Pricing, eligibility, and terms are set by each partner.</p>
+    </div>
+    <div class="bk-offer-list">
+      <div class="bk-offer">
+        <span class="bk-offer-img"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+        <div class="bk-offer-copy">
+          <p class="bk-offer-title">Self storage, first month $1 <span class="bk-badge bk-badge-blue">Storage &middot; Partner</span></p>
+          <p class="bk-offer-sub">from <strong>VaultStor</strong> &middot; Month-to-month. No long-term commitment.</p>
+        </div>
+        <div class="bk-offer-cta">
+          <p class="bk-offer-val">First month $1</p>
+          <a href="#">Find a Unit <span>&#8594;</span></a>
+        </div>
+      </div>
+      <div class="bk-offer">
+        <span class="bk-offer-img"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+        <div class="bk-offer-copy">
+          <p class="bk-offer-title">TV mounting &amp; furniture assembly <span class="bk-badge bk-badge-warn">Home Services &middot; Partner</span></p>
+          <p class="bk-offer-sub">from <strong>Setly</strong> &middot; Book single tasks from $69. Same-day windows available.</p>
+        </div>
+        <div class="bk-offer-cta">
+          <p class="bk-offer-val">From $69</p>
+          <a href="#">Get Started Now <span>&#8594;</span></a>
+        </div>
+      </div>
+      <div class="bk-offer">
+        <span class="bk-offer-img"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+        <div class="bk-offer-copy">
+          <p class="bk-offer-title">Move-in &amp; move-out cleaning <span class="bk-badge bk-badge-pos">Home Services &middot; Partner</span></p>
+          <p class="bk-offer-sub">from <strong>Cleanly</strong> &middot; $50 off your first booking with code SHIP50.</p>
+        </div>
+        <div class="bk-offer-cta">
+          <p class="bk-offer-val">$50 off</p>
+          <a href="#">Book Cleaning <span>&#8594;</span></a>
+        </div>
+      </div>
+      <div class="bk-offer">
+        <span class="bk-offer-img"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+        <div class="bk-offer-copy">
+          <p class="bk-offer-title">24/7 roadside assistance <span class="bk-badge bk-badge-purple">Roadside &middot; Partner</span></p>
+          <p class="bk-offer-sub">from <strong>RoadAngel</strong> &middot; First 60 days free for uShip customers.</p>
+        </div>
+        <div class="bk-offer-cta">
+          <p class="bk-offer-val">60 days free</p>
+          <a href="#">Claim Offer <span>&#8594;</span></a>
+        </div>
+      </div>
+    </div>
+    <p class="bk-seeall"><a href="#">See all partner offers <span>&#8250;</span></a></p>
+  </div>
+</main>
+
+<!-- ============ Slim footer ============ -->
+<footer class="auth-footer">
+  <div class="container">
+    <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+    <div class="legal-links">
+      <a href="#">uShip User Agreement</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Site Map</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Help</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

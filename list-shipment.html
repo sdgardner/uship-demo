@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Shipment — uShip In-Home Delivery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="ls-page">
+
+<!-- ============ Header (logo only) ============ -->
+<header class="site-header">
+  <div class="container" style="height:70px">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+  </div>
+</header>
+
+<!-- ============ Hero banner ============ -->
+<section class="ls-hero">
+  <img class="ls-hero-img" src="assets/ihd/hero.webp" alt="" onerror="this.remove()">
+  <div class="ls-hero-text">
+    <h1>Welcome to uShip In-Home Delivery<br>Let's Start Shipping!</h1>
+    <p>Unlock uShip's network of feedback-rated carriers for the room-of-choice, blanket-wrap service buyers expect today</p>
+  </div>
+</section>
+
+<!-- ============ Page title ============ -->
+<div class="page-title-bar">
+  <div class="container">
+    <h1 class="ls-title">New Shipment</h1>
+  </div>
+</div>
+
+<main class="ls-main">
+  <div class="container ls-layout">
+
+    <div class="ls-card">
+      <h2 class="ls-card-title">List a Shipment - IHD Experience</h2>
+
+      <div class="ls-item-row">
+        <div class="ls-form" id="ls-items">
+          <div class="ls-item">
+            <div class="ls-item-head">
+              <span class="ls-item-title">Item <span class="ls-item-num">1</span></span>
+              <a class="ls-remove" href="#">&#10005; Remove</a>
+            </div>
+            <label class="ls-label">Furniture Type</label>
+            <select class="ls-select ls-combo ls-ftype">
+              <option value="">Start typing to find your furniture type</option>
+              <option>Sofa / Couch</option>
+              <option>Dresser</option>
+              <option>Dining Table</option>
+              <option>Bedframe</option>
+              <option>Armchair</option>
+              <option>Bookcase</option>
+              <option>Desk</option>
+            </select>
+            <p class="ls-error">&#9888; Your description must have at least 3 characters</p>
+            <p class="ls-help">Use keywords like 'table' or 'chair' to search.</p>
+
+            <div class="ls-dims">
+              <div><label class="ls-label">Length</label><input class="ls-input ls-len" inputmode="decimal"></div>
+              <div><label class="ls-label">Width</label><input class="ls-input ls-wid" inputmode="decimal"></div>
+              <div><label class="ls-label">Height</label><input class="ls-input ls-hgt" inputmode="decimal"></div>
+              <div><label class="ls-label">Unit</label><select class="ls-select"><option>in</option><option>ft</option><option>cm</option></select></div>
+            </div>
+
+            <div class="ls-weight">
+              <div class="grow"><label class="ls-label">Weight</label><input class="ls-input ls-wgt" inputmode="decimal"></div>
+              <div><label class="ls-label">Unit</label><select class="ls-select"><option>lbs</option><option>kg</option></select></div>
+              <div><label class="ls-label">Quantity</label><input class="ls-input ls-qty" value="1" inputmode="numeric"></div>
+            </div>
+          </div>
+
+          <button type="button" class="ls-add" id="ls-add">&#8853; Add Another Item</button>
+        </div>
+
+        <div class="ls-packaging">
+          <h3>Include Packaging</h3>
+          <p>If using boxes, crates, or pallets, be sure to include them in your total measurements.</p>
+          <img src="assets/ihd/dresser.webp" alt="Dresser showing height, width, and length measurements" onerror="this.remove()">
+        </div>
+      </div>
+
+      <div class="ls-locations">
+        <div>
+          <h3>Pickup Location</h3>
+          <label class="ls-label" for="zip-from">Zip</label>
+          <div class="ls-zip-wrap"><span class="zip-arrow">&#8599;</span><input class="ls-input ls-zip" id="zip-from" placeholder="e.g. 78701" inputmode="numeric" maxlength="5"></div>
+        </div>
+        <div>
+          <h3>Delivery Location</h3>
+          <label class="ls-label" for="zip-to">Zip</label>
+          <div class="ls-zip-wrap"><span class="zip-arrow">&#8600;</span><input class="ls-input ls-zip" id="zip-to" placeholder="e.g. 78701" inputmode="numeric" maxlength="5"></div>
+        </div>
+      </div>
+
+      <div class="ls-estimate">
+        <div class="ls-est-about">
+          <h3>About Your Shipping Estimate:</h3>
+          <p>uShip In-Home Delivery pricing includes blanket-wrap service and room-of-choice delivery from a network of first-to-final mile carriers. This is an automatically generated estimate based on the average price paid by other shippers for comparable shipments.</p>
+          <p><strong>Note:</strong> This estimate does not include assembly or debris removal. Within the listing, note the need for such services. These may increase the shipping price.</p>
+        </div>
+        <div class="ls-est-box">
+          <h3>Shipping Estimate</h3>
+          <p class="ls-est-hint" id="est-hint"><strong>Please complete all fields above to see pricing</strong></p>
+          <div class="ls-est-row"><span>Price</span><span id="est-price">$--.--</span></div>
+          <div class="ls-est-row"><span>uShip Fee</span><span id="est-fee">$--.--</span></div>
+          <div class="ls-est-total"><span>Total</span><span id="est-total">$--.--</span></div>
+          <div class="ls-demo-alert">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#027cb1" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="#027cb1" stroke="none"/></svg>
+            <p>Pricing shown here is for demo purposes only. Please <a href="#">contact uShip</a> with any pricing questions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ls-continue-wrap">
+        <a class="ls-continue" id="ls-continue" href="#" aria-disabled="true" data-next>Continue</a>
+      </div>
+
+      <div class="ls-steps">
+        <h3>Start Shipping in 3 Easy Steps</h3>
+        <h4>Step 1: Get Your Shipping Estimate</h4>
+        <p>Tell us about your shipment to access an instant, automatically generated shipping estimate above. No more waiting for rates. No more phone calls.</p>
+        <p class="ls-fine"><em>*Suggested date range for delivery is one week for pickup and two weeks for delivery.</em></p>
+        <h4>Step 2. Book an Eligible Carrier</h4>
+        <p>Click "Ship It Now" to complete your listing, purchase additional protection, and get your shipment in front of our curated network of carriers. Once a carrier accepts your offer and you've reviewed their profile, book the shipment to initiate pickup.</p>
+        <h4>Step 3. Complete Your Shipment</h4>
+        <p>Once you're booked, you'll see a tracking link that you can share with buyers. Upon confirmed delivery, simply "Release Payment" to the carrier to complete your shipment.</p>
+        <p><strong>Not looking for home delivery shipping? List through the <a class="ls-link" href="new-shipment.html">uShip Marketplace</a> for great service at lower rates.</strong></p>
+      </div>
+    </div>
+
+    <aside class="ls-aside">
+      <h3>Details Matter</h3>
+      <p>The quotes you get are only as accurate as your listing. Make it as detailed as possible to avoid delays, price increases, and cancellations.</p>
+    </aside>
+
+  </div>
+</main>
+
+<!-- ============ Slim footer ============ -->
+<footer class="auth-footer">
+  <div class="container">
+    <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+    <div class="legal-links">
+      <a href="#">uShip User Agreement</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Site Map</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Help</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

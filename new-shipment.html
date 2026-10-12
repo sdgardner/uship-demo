@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Shipment — uShip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="ns-page">
+
+<!-- ============ Header (swapped to logged-in state by app.js) ============ -->
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+    <nav class="main-nav">
+      <a href="#">Getting Started</a>
+      <a href="#">Ship</a>
+      <a href="#">Find Shipments</a>
+      <a href="#">For Carriers</a>
+      <a href="#">For Business</a>
+    </nav>
+    <div class="header-auth">
+      <a href="signin.html">Sign In</a>
+      <a href="#">Join</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<!-- ============ Page title bar ============ -->
+<div class="page-title-bar">
+  <div class="container">
+    <h1>New Shipment</h1>
+    <div class="ptb-member m-only">
+      <span class="ptb-net"><img src="assets/figma/gem-small.svg" alt="">IHD Private Network</span>
+      <span class="ptb-div"></span>
+      <span class="ptb-sub">Active member since March 2024</span>
+    </div>
+  </div>
+</div>
+
+<main class="ns-main">
+  <div class="container">
+
+    <!-- ============ IHD Private Network ============ -->
+    <section class="ns-section">
+      <div class="ns-section-head d-only">
+        <span class="ns-head-label"><img src="assets/figma/gem-header.svg" alt="">IHD Private Network</span>
+        <span class="ns-head-divider"></span>
+        <span class="ns-head-sub">Active member since March 2024</span>
+      </div>
+      <p class="select-label m-only">Select a Category:</p>
+      <div class="ihd-card">
+        <div class="ihd-card-body">
+          <div class="ihd-eyebrow"><img src="assets/figma/gem-small.svg" alt="">IHD Private Network</div>
+          <h2><span class="d-only">In-Home Delivery Network</span><span class="m-only">In-Home Delivery for Trusted Retail Partners</span></h2>
+          <p><span class="d-only">Ship with your approved carrier network specializing in white-glove delivery, room-of-choice placement, and blanket-wrap protection.</span><span class="m-only">Connect with approved carriers in your private network, specializing in white-glove delivery, room-of-choice placement, and blanket-wrap protection.</span></p>
+          <a class="btn-ihd" href="#" data-next>Start an IHD Shipment <img src="assets/figma/arrow-right-white.svg" alt=""></a>
+          <div class="ihd-perks">
+            <span><img src="assets/figma/icon-network.svg" alt="">Private Network</span>
+            <span><img src="assets/figma/icon-truck.svg" alt="">Premium Delivery</span>
+            <span><img src="assets/figma/icon-headset.svg" alt="">Dedicated Support</span>
+            <span class="d-only"><img src="assets/figma/icon-shield.svg" alt="">Shipping Protection Available</span>
+          </div>
+        </div>
+        <div class="ihd-card-photo">
+          <img src="assets/figma/ihd-hero.png" alt="Delivery professional carrying wrapped furniture">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ General Marketplace ============ -->
+    <section class="ns-section">
+      <div class="ns-section-head d-only">
+        <span class="ns-head-label"><img src="assets/figma/icon-store.svg" alt="">General Marketplace</span>
+        <span class="ns-head-divider"></span>
+        <span class="ns-head-sub">All categories</span>
+      </div>
+      <div class="ns-grid">
+        <a class="ns-card" href="#">
+          <div class="ns-card-img"><img src="assets/figma/cat-vehicles.png" alt=""></div>
+          <h3>Vehicles</h3>
+          <p>Cars, Trucks, Motorcycles, Trailers, RVs</p>
+        </a>
+        <a class="ns-card" href="#">
+          <div class="ns-card-img"><img src="assets/figma/cat-boats.png" alt=""></div>
+          <h3>Boats</h3>
+          <p>Powerboats, Sailboats, Jet Skis, Kayaks, Canoes</p>
+        </a>
+        <a class="ns-card" href="household-items.html">
+          <span class="ns-card-flag m-only">IHD Private Network</span>
+          <div class="ns-card-img"><img src="assets/figma/cat-household.png" alt=""></div>
+          <h3>Household Items</h3>
+          <p>Furniture, Art, Appliances, Equipment</p>
+        </a>
+        <a class="ns-card" href="#">
+          <div class="ns-card-img"><img src="assets/figma/cat-heavy.png" alt=""></div>
+          <h3>Heavy Equipment</h3>
+          <p>Farm, Construction</p>
+        </a>
+        <a class="ns-card" href="#">
+          <div class="ns-card-img"><img src="assets/figma/cat-moves.png" alt=""></div>
+          <h3>Moves</h3>
+          <p>Apartment, Home, Office</p>
+        </a>
+        <a class="ns-card" href="#">
+          <div class="ns-card-img"><img src="assets/figma/cat-freight.png" alt=""></div>
+          <h3>Freight</h3>
+          <p>Less-Than-Truckload, Truckload</p>
+        </a>
+        <a class="ns-card" href="#">
+          <div class="ns-card-img"><img src="assets/figma/cat-animals.png" alt=""></div>
+          <h3>Animals</h3>
+          <p>Dogs, Cats, Livestock</p>
+        </a>
+        <a class="ns-card" href="#">
+          <div class="ns-card-img"><img src="assets/figma/cat-other.png" alt=""></div>
+          <h3>Other</h3>
+          <p>Hay Bales, Waterslides, Jacuzzis, etc.</p>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- ============ Slim footer ============ -->
+<footer class="auth-footer">
+  <div class="container">
+    <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+    <div class="legal-links">
+      <a href="#">uShip User Agreement</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Site Map</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Help</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>
