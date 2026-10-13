@@ -288,40 +288,62 @@ a { color: inherit; text-decoration: none; }
 .app-banner p { font-size: 16px; color: #d6dde2; margin-bottom: 22px; }
 .app-banner .badges img { max-width: 420px; width: 100%; }
 
-/* ---------- FAQ ---------- */
-.faq-list details { border-bottom: 1px solid var(--line); }
+/* ---------- FAQ (homepage mock) ---------- */
+.faq-list { max-width: 640px; margin: 0 auto; }
+.faq-list details { border-top: 1px solid var(--line); }
+.faq-list details:last-child { border-bottom: 1px solid var(--line); }
 .faq-list summary {
   cursor: pointer;
   list-style: none;
-  padding: 18px 36px 18px 0;
-  font-size: 15px;
-  font-weight: 700;
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 18px 4px;
+  font: 700 13px/18px var(--font);
+  letter-spacing: .8px;
   text-transform: uppercase;
-  letter-spacing: .3px;
-  color: var(--ink);
-  position: relative;
+  color: #262626;
 }
 .faq-list summary::-webkit-details-marker { display: none; }
-.faq-list summary::after {
-  content: "+";
-  position: absolute; right: 8px; top: 50%;
-  transform: translateY(-50%);
-  font-size: 22px; font-weight: 400; color: var(--green);
+.faq-chev {
+  flex: none;
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 1.6px solid #0288c2; color: #0288c2;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: transform .15s;
+  margin-top: -1px;
 }
-.faq-list details[open] summary::after { content: "–"; }
-.faq-list .faq-a { padding: 0 0 22px; font-size: 15px; color: var(--ink); max-width: 860px; }
+.faq-list details[open] .faq-chev { transform: rotate(180deg); }
+.faq-a { padding: 0 4px 22px 38px; }
+.faq-a p { font: 400 14px/1.65 var(--font); color: #262626; margin-bottom: 14px; }
+.faq-a p:last-child { margin-bottom: 0; }
+.faq-a a { color: #027cb1; text-decoration: underline; }
 
-/* ---------- Experts ---------- */
-.experts-list a {
-  display: block;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-  color: var(--link);
+/* ---------- Experts cards (homepage mock) ---------- */
+.experts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 980px; margin: 0 auto; }
+.expert-card h3 {
+  font: 700 14px/1.45 var(--font); letter-spacing: .6px; text-transform: uppercase;
+  color: var(--ink); margin-top: 14px;
 }
-.experts-list a:hover { text-decoration: underline; }
+.expert-card:hover h3 { color: var(--link); }
+.expert-art { height: 150px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.expert-art-dark { background: #1c3245; }
+.expert-art-light { background: #cfe4f5; }
+.expert-art-mid { background: #2f7fc1; }
+
+/* ---------- Homepage footer (white, mock) ---------- */
+.home-footer { background: #fff; border-top: 1px solid var(--line); padding: 28px 0 28px; margin-top: 64px; }
+.hf-row { padding: 14px 0; border-bottom: 1px solid #eee; }
+.hf-cost h5 { font: 700 11px/16px var(--font); letter-spacing: 1px; text-transform: uppercase; color: #595959; margin-bottom: 10px; }
+.hf-cost nav, .hf-company nav { display: flex; gap: 24px; flex-wrap: wrap; }
+.hf-cost a { font: 400 14px var(--font); color: #027cb1; }
+.hf-company { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.hf-company a { font: 400 13px var(--font); letter-spacing: .6px; text-transform: uppercase; color: #027cb1; }
+.hf-cost a:hover, .hf-company a:hover { text-decoration: underline; }
+.hf-region { text-align: right; font: 400 13px var(--font); color: #595959; padding: 12px 0; border-bottom: 1px solid #eee; }
+.hf-legal { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 18px; }
+.hf-legal small { font: 400 13px var(--font); color: #999; }
+.hf-legal nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.hf-legal a { font: 400 13px var(--font); color: #027cb1; }
+.hf-legal a:hover { text-decoration: underline; }
 
 /* ---------- Footer (navy) ---------- */
 .site-footer { background: var(--navy); color: #aeb9c2; padding: 56px 0 32px; }
