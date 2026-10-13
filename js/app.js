@@ -733,3 +733,147 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     </div>`;
   }).join("");
 })();
+
+// ============================================
+// Guided tour (for prospect demos)
+// ============================================
+(function () {
+  const PAGE = location.pathname.split("/").pop() || "index.html";
+  const signedIn = (() => { try { return !!localStorage.getItem("uship_demo_user"); } catch (e) { return false; } })();
+  const T = {
+    get: () => { try { return sessionStorage.getItem("uship_tour"); } catch (e) { return null; } },
+    set: (v) => { try { sessionStorage.setItem("uship_tour", v); } catch (e) {} },
+  };
+
+  // sel: element to highlight; text: tooltip copy; click: advance when the user
+  // clicks the target (vs a Next button); ihd: purple accent
+  const TOURS = {
+    "index.html:out": [
+      { sel: ".header-auth a[href='signin.html']", text: "Everything starts at uShip.com. Click Sign In — the demo account is already filled in for you.", click: true },
+    ],
+    "signin.html": [
+      { sel: ".auth-submit", text: "Credentials are pre-filled for this demo. Just click Sign in.", click: true },
+    ],
+    "index.html:in": [
+      { sel: ".badge-ihd", text: "You're signed in as an In-Home Delivery member — this badge follows you through the experience.", ihd: true },
+      { sel: ".hero-cta .btn-primary", text: "Let's ship something. Click Get Shipping Quotes.", click: true },
+    ],
+    "new-shipment.html": [
+      { sel: ".ihd-card", text: "As an IHD member, you get a private network of approved white-glove carriers — alongside the general marketplace below.", ihd: true },
+      { sel: ".btn-ihd", text: "Click Start an IHD Shipment to begin.", click: true },
+    ],
+    "household-items.html": [
+      { sel: ".hh-ihd-card", text: "Household items can also route into the IHD network from here — this purple tile is the members-only path.", ihd: true, click: true },
+    ],
+    "list-shipment.html": [
+      { sel: ".ls-item", text: "Describe what you're shipping. Try a Bedframe: 12 \u00d7 12 \u00d7 21 in, 111 lbs." },
+      { sel: ".ls-locations", text: "Add pickup and delivery ZIP codes — try 78728 to 87111. We'll resolve the cities for you." },
+      { sel: ".ls-est-box", text: "The estimate computes instantly from size, weight, and real distance — no waiting on rates." },
+      { sel: "#ls-continue", text: "Once every field is filled, Continue turns green. Fill in the form, then click it.", click: true },
+    ],
+    "confirm-shipment.html": [
+      { sel: ".cs-summary", text: "Your shipment and price carry over automatically." },
+      { sel: ".cs-section:nth-of-type(4)", text: "Blanket Wrap comes pre-selected — it's the standard for In-Home Delivery.", ihd: true },
+      { sel: "#create-listing", text: "Click Create a Listing to put this shipment in front of carriers.", click: true },
+    ],
+    "listing.html": [
+      { sel: ".lp-success", text: "Your listing is live. These next steps track what's left to do." },
+      { sel: ".lp-offer", text: "Your price breakdown, time left on the listing, and activity stats live here." },
+      { sel: "[data-tab='quotes']", text: "Carriers have already quoted. Open the Quote tab.", click: true },
+      { sel: ".q-card", text: "Compare carriers — click a carrier's name to see their full profile and reviews." },
+      { sel: ".q-accept", text: "Ready to book? Click Accept on a quote.", click: true },
+    ],
+    "checkout.html": [
+      { sel: ".co-plan-card", text: "Shippers can add the uShip Protection Plan for covered items — recommended, and priced off the declared value." },
+      { sel: "#co-agree", text: "Check the agreement box\u2026", click: true },
+      { sel: "#co-book", text: "\u2026and click Complete Booking.", click: true },
+    ],
+    "booked.html": [
+      { sel: ".bk-alert", text: "Booked! The shipper gets carrier contact info, a receipt, and post-booking tips." },
+      { sel: ".bk-provider", text: "Direct line to the carrier from the moment of booking." },
+      { sel: ".bk-offers", text: "That's the full In-Home Delivery experience \u2014 from quote to booked in minutes. Thanks for exploring!", last: true },
+    ],
+  };
+
+  const key = PAGE === "index.html" ? (signedIn ? "index.html:in" : "index.html:out") : PAGE;
+  const steps = TOURS[key];
+
+  function clearTip() {
+    document.querySelectorAll(".tour-tip").forEach((t) => t.remove());
+    document.querySelectorAll(".tour-ring").forEach((t) => t.classList.remove("tour-ring"));
+  }
+
+  function endTour() { clearTip(); T.set("done"); }
+
+  function showStep(i) {
+    clearTip();
+    if (!steps || i >= steps.length) return;
+    const s = steps[i];
+    const el = document.querySelector(s.sel);
+    if (!el) { showStep(i + 1); return; }
+    el.classList.add("tour-ring");
+    el.scrollIntoView({ block: "center", behavior: "smooth" });
+
+    const tip = document.createElement("div");
+    tip.className = "tour-tip" + (s.ihd ? " tour-tip-ihd" : "");
+    tip.innerHTML =
+      "<h4>" + (s.ihd ? "IHD Member Perk" : "uShip Demo Tour") + "</h4>" +
+      "<p>" + s.text + "</p>" +
+      '<div class="tour-tip-foot">' +
+      '<span class="tour-tip-count">' + (i + 1) + " of " + steps.length + "</span>" +
+      (s.click ? '<span class="tour-tip-action"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00902c" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M4 4l7 16 2.5-6.5L20 11z" stroke-linejoin="round"/></svg>Click it to continue</span>'
+        : s.last ? '<button class="tour-tip-next">Done</button>'
+        : '<button class="tour-tip-next">Next</button>') +
+      "</div>" +
+      '<button class="tour-tip-skip">End tour</button>';
+    document.body.appendChild(tip);
+
+    // Position below (or above) the target
+    requestAnimationFrame(() => {
+      const r = el.getBoundingClientRect();
+      const tw = tip.offsetWidth, th = tip.offsetHeight;
+      let top = r.bottom + window.scrollY + 14;
+      let arrowTop = -7;
+      if (r.bottom + th + 20 > window.scrollY + window.innerHeight && r.top - th - 14 > 0) {
+        top = r.top + window.scrollY - th - 14;
+        arrowTop = th - 7;
+      }
+      let left = r.left + window.scrollX + r.width / 2 - tw / 2;
+      left = Math.max(12, Math.min(left, window.scrollX + document.documentElement.clientWidth - tw - 12));
+      tip.style.top = top + "px";
+      tip.style.left = left + "px";
+      const arrow = document.createElement("div");
+      arrow.className = "tour-tip-arrow";
+      arrow.style.top = arrowTop + "px";
+      arrow.style.left = Math.max(14, Math.min(r.left + r.width / 2 - left - 7, tw - 28)) + "px";
+      tip.appendChild(arrow);
+    });
+
+    tip.querySelector(".tour-tip-skip").addEventListener("click", endTour);
+    const next = tip.querySelector(".tour-tip-next");
+    if (next) next.addEventListener("click", () => (s.last ? endTour() : showStep(i + 1)));
+    if (s.click) el.addEventListener("click", () => setTimeout(() => showStep(i + 1), 150), { once: true });
+  }
+
+  function startTour() { T.set("on"); showStep(0); }
+
+  // Welcome modal on the homepage (once per session)
+  if (PAGE === "index.html" && !signedIn && !T.get()) {
+    const ov = document.createElement("div");
+    ov.className = "tour-welcome-overlay";
+    ov.innerHTML = `
+      <div class="tour-welcome">
+        <img class="tour-rings" src="assets/figma/ihd-icon.svg" alt="">
+        <h2>Thanks for taking a look at uShip In-Home Delivery</h2>
+        <p>This is a clickable demo of the full shipper experience — from getting an instant quote to booking a white-glove carrier.</p>
+        <p>We'll guide you through each step with quick tips along the way.</p>
+        <button class="tour-start">Start the Tour</button>
+        <button class="tour-later">Explore on my own</button>
+      </div>`;
+    document.body.appendChild(ov);
+    ov.querySelector(".tour-start").addEventListener("click", () => { ov.remove(); startTour(); });
+    ov.querySelector(".tour-later").addEventListener("click", () => { ov.remove(); T.set("done"); });
+  } else if (T.get() === "on" && steps) {
+    showStep(0);
+  }
+})();
