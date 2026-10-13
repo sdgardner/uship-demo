@@ -95,14 +95,38 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   const ihdSection = document.querySelector(".ihd-card");
   if (ihdSection) ihdSection.closest(".ns-section")?.remove();
   // Household page: the IHD tile becomes a plain Furniture card when logged out
-  const hh = document.querySelector(".hh-ihd-card");
+  let hh = document.querySelector(".hh-ihd-card");
   if (hh) {
+    const clone = hh.cloneNode(true); // drop the shipping-flow click handler
+    clone.removeAttribute("data-next");
+    clone.removeAttribute("href");
+    hh.replaceWith(clone);
+    hh = clone;
     hh.classList.remove("hh-ihd-card");
     hh.querySelector(".hh-gem-circle")?.remove();
     hh.querySelector(".hh-tags")?.remove();
     const h3 = hh.querySelector("h3");
     h3.textContent = "Furniture";
     hh.insertBefore(hh.querySelector(".ns-card-img"), h3); // image above the title like the other cards
+    // Clicking it invites the visitor to sign in for the IHD experience
+    hh.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (document.querySelector(".ihd-gate-overlay")) return;
+      const ov = document.createElement("div");
+      ov.className = "tour-welcome-overlay ihd-gate-overlay";
+      ov.innerHTML = `
+        <div class="tour-welcome ihd-gate">
+          <span class="hh-gem-circle" style="margin:0 auto 14px"><img src="assets/figma/gem-purple.svg" alt=""></span>
+          <h2>Shipping furniture? Meet In-Home Delivery</h2>
+          <p>IHD members ship with a private network of approved carriers — white-glove service, room-of-choice placement, and blanket-wrap protection on every job.</p>
+          <p>Sign in to see the members-only experience.</p>
+          <a class="tour-start" href="signin.html" style="text-decoration:none">Sign In to uShip</a>
+          <button class="tour-later">Continue without signing in</button>
+        </div>`;
+      document.body.appendChild(ov);
+      ov.querySelector(".tour-later").addEventListener("click", () => ov.remove());
+      ov.addEventListener("click", (ev) => { if (ev.target === ov) ov.remove(); });
+    });
   }
   document.querySelectorAll(".ptb-member, .ns-card-flag").forEach((el) => el.remove());
 })();
