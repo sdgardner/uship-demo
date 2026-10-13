@@ -94,7 +94,16 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   if (user) return;
   const ihdSection = document.querySelector(".ihd-card");
   if (ihdSection) ihdSection.closest(".ns-section")?.remove();
-  document.querySelector(".hh-ihd-card")?.remove();
+  // Household page: the IHD tile becomes a plain Furniture card when logged out
+  const hh = document.querySelector(".hh-ihd-card");
+  if (hh) {
+    hh.classList.remove("hh-ihd-card");
+    hh.querySelector(".hh-gem-circle")?.remove();
+    hh.querySelector(".hh-tags")?.remove();
+    const h3 = hh.querySelector("h3");
+    h3.textContent = "Furniture";
+    hh.insertBefore(hh.querySelector(".ns-card-img"), h3); // image above the title like the other cards
+  }
   document.querySelectorAll(".ptb-member, .ns-card-flag").forEach((el) => el.remove());
 })();
 
