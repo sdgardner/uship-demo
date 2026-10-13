@@ -87,6 +87,17 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   });
 })();
 
+// IHD content is members-only: hide it for logged-out visitors
+(function () {
+  let user = null;
+  try { user = localStorage.getItem("uship_demo_user"); } catch (e) {}
+  if (user) return;
+  const ihdSection = document.querySelector(".ihd-card");
+  if (ihdSection) ihdSection.closest(".ns-section")?.remove();
+  document.querySelector(".hh-ihd-card")?.remove();
+  document.querySelectorAll(".ptb-member, .ns-card-flag").forEach((el) => el.remove());
+})();
+
 // List a Shipment: multi-item form + computed estimate
 (function () {
   const cont = document.getElementById("ls-continue");
