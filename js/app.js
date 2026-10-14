@@ -840,7 +840,7 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     "booked.html": [
       { sel: ".bk-alert", text: "Booked! The shipper gets carrier contact info, a receipt, and post-booking tips." },
       { sel: ".bk-provider", text: "Direct line to the carrier from the moment of booking." },
-      { sel: ".bk-offers", text: "That's the full In-Home Delivery experience \u2014 from quote to booked in minutes. Thanks for exploring!", last: true },
+      { modal: true, last: true },
     ],
   };
 
@@ -858,6 +858,21 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     clearTip();
     if (!steps || i >= steps.length) return;
     const s = steps[i];
+    if (s.modal) {
+      const ov = document.createElement("div");
+      ov.className = "tour-welcome-overlay";
+      ov.innerHTML = `
+        <div class="tour-welcome">
+          <img class="tour-rings" src="assets/figma/ihd-icon.svg" alt="">
+          <h2>That's the full In-Home Delivery experience</h2>
+          <p>From instant quote to booked with a white-glove carrier \u2014 in minutes.</p>
+          <p>Thanks for exploring! Feel free to click around, or start over from the home page any time.</p>
+          <button class="tour-start">Done</button>
+        </div>`;
+      document.body.appendChild(ov);
+      ov.querySelector(".tour-start").addEventListener("click", () => { ov.remove(); endTour(); });
+      return;
+    }
     const el = document.querySelector(s.sel);
     if (!el) { showStep(i + 1); return; }
     el.classList.add("tour-ring");
