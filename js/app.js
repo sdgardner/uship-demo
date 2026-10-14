@@ -413,6 +413,7 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   const fee = Math.round(feeExact);
   const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
   set("lp-offer", quote); set("lp-fee", feeExact.toFixed(2)); set("lp-total", (quote + feeExact).toFixed(2));
+  set("lp-offer-short", quote);
   set("q-amount", quote); set("q-b-quote", quote); set("q-b-fee", feeExact.toFixed(2)); set("q-b-total", (quote + feeExact).toFixed(2));
   const today = new Date();
   const plus = (n) => { const x = new Date(today); x.setDate(x.getDate() + n); return x; };
