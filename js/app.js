@@ -402,6 +402,7 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     document.querySelectorAll(".lp-pane").forEach((p) => (p.hidden = p.id !== "tab-" + name));
   }
   tabs.forEach((t) => t.addEventListener("click", (e) => { e.preventDefault(); show(t.dataset.tab); }));
+  if (location.hash === "#quotes") show("quotes");
   document.querySelectorAll("[data-tab-link]").forEach((a) =>
     a.addEventListener("click", (e) => { e.preventDefault(); show(a.dataset.tabLink); window.scrollTo({ top: 0 }); }));
 
