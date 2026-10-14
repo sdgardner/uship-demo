@@ -825,6 +825,9 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     "listing.html": [
       { sel: ".lp-success", text: "Your listing is live. These next steps track what's left to do." },
       { sel: ".lp-offer", text: "Your price breakdown, time left on the listing, and activity stats live here." },
+      { sel: ".lp-details", text: "Everything carriers see about your shipment — items, dimensions, weight, and requested service types — lives in this recap." },
+      { sel: "[data-tab='questions']", text: "Carriers can message you before you book. Open the Questions tab.", click: true },
+      { sel: ".qa-card", text: "Threaded Q&A keeps the conversation on uShip — reply to carriers right from your listing." },
       { sel: "[data-tab='quotes']", text: "Carriers have already quoted. Open the Quote tab.", click: true },
       { sel: ".q-card", text: "Compare carriers — click a carrier's name to see their full profile and reviews." },
       { sel: ".q-accept", text: "Ready to book? Click Accept on a quote.", click: true },
