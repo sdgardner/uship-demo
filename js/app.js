@@ -430,9 +430,8 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   if (!document.body.classList.contains("lp-page")) return;
   const pane = document.getElementById("tab-quotes");
   if (!pane) return;
-  let d = null;
-  try { d = JSON.parse(sessionStorage.getItem("uship_demo_shipment")); } catch (e) {}
-  const base = Math.round(parseFloat((d && d.price) || "313"));
+  // Always mirror the offer amount already rendered on the page
+  const base = parseInt(document.getElementById("lp-offer").textContent, 10) || 454;
   const today = new Date();
   const plus = (n) => { const x = new Date(today); x.setDate(x.getDate() + n); return x; };
   const md = (dt) => dt.toLocaleDateString("en-US", { month: "short", day: "numeric" });
