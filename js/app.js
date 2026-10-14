@@ -430,8 +430,10 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   if (!document.body.classList.contains("lp-page")) return;
   const pane = document.getElementById("tab-quotes");
   if (!pane) return;
-  // Always mirror the offer amount already rendered on the page
+  // Always mirror the price breakdown already rendered on the page
   const base = parseInt(document.getElementById("lp-offer").textContent, 10) || 454;
+  const feeStr = document.getElementById("lp-fee").textContent || "34.05";
+  const totalStr = document.getElementById("lp-total").textContent || "488.05";
   const today = new Date();
   const plus = (n) => { const x = new Date(today); x.setDate(x.getDate() + n); return x; };
   const md = (dt) => dt.toLocaleDateString("en-US", { month: "short", day: "numeric" });
@@ -461,7 +463,6 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
 
   CARRIERS.forEach((c) => {
     const price = base + c.bump;
-    const fee = Math.round(price * 0.108);
     const card = document.createElement("div");
     card.className = "lp-card q-card";
     card.style.marginTop = "20px";
@@ -508,8 +509,8 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
             <div class="q-breakdown">
               <h5 class="lp-label">Breakdown</h5>
               <div class="q-row"><span class="lp-label">Quote</span><strong>$${price}</strong></div>
-              <div class="q-row"><span class="lp-label">uShip Fee</span><strong>$${fee}</strong></div>
-              <div class="q-row q-row-total"><span class="lp-label">Total</span><strong>$${price + fee}</strong></div>
+              <div class="q-row"><span class="lp-label">uShip Fee</span><strong>$${feeStr}</strong></div>
+              <div class="q-row q-row-total"><span class="lp-label">Total</span><strong>$${totalStr}</strong></div>
             </div>
             <h5 class="lp-label q-sp">Additional Payment Terms</h5>
             <p class="q-val">At Delivery</p>
