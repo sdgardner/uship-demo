@@ -48,10 +48,10 @@
               <a class="ls-remove" href="#">&#10005; Remove</a>
             </div>
             <label class="ls-label">Furniture Type</label>
-            <select class="ls-select ls-combo ls-ftype">
+            <select class="ls-select ls-combo ls-ftype filled">
               <option value="">Start typing to find your furniture type</option>
               <option>Sofa / Couch</option>
-              <option>Dresser</option>
+              <option selected>Dresser</option>
               <option>Dining Table</option>
               <option>Bedframe</option>
               <option>Armchair</option>
@@ -62,14 +62,14 @@
             <p class="ls-help">Use keywords like 'table' or 'chair' to search.</p>
 
             <div class="ls-dims">
-              <div><label class="ls-label">Length</label><input class="ls-input ls-len" inputmode="decimal"></div>
-              <div><label class="ls-label">Width</label><input class="ls-input ls-wid" inputmode="decimal"></div>
-              <div><label class="ls-label">Height</label><input class="ls-input ls-hgt" inputmode="decimal"></div>
+              <div><label class="ls-label">Length</label><input class="ls-input ls-len" inputmode="decimal" value="32"></div>
+              <div><label class="ls-label">Width</label><input class="ls-input ls-wid" inputmode="decimal" value="18"></div>
+              <div><label class="ls-label">Height</label><input class="ls-input ls-hgt" inputmode="decimal" value="48"></div>
               <div><label class="ls-label">Unit</label><select class="ls-select"><option>in</option><option>ft</option><option>cm</option></select></div>
             </div>
 
             <div class="ls-weight">
-              <div class="grow"><label class="ls-label">Weight</label><input class="ls-input ls-wgt" inputmode="decimal"></div>
+              <div class="grow"><label class="ls-label">Weight</label><input class="ls-input ls-wgt" inputmode="decimal" value="120"></div>
               <div><label class="ls-label">Unit</label><select class="ls-select"><option>lbs</option><option>kg</option></select></div>
               <div><label class="ls-label">Quantity</label><input class="ls-input ls-qty" value="1" inputmode="numeric"></div>
             </div>
@@ -89,12 +89,12 @@
         <div>
           <h3>Pickup Location</h3>
           <label class="ls-label" for="zip-from">Zip</label>
-          <div class="ls-zip-wrap"><span class="zip-arrow">&#8599;</span><input class="ls-input ls-zip" id="zip-from" placeholder="e.g. 78701" inputmode="numeric" maxlength="5"></div>
+          <div class="ls-zip-wrap"><span class="zip-arrow">&#8599;</span><input class="ls-input ls-zip" id="zip-from" placeholder="e.g. 78701" value="Austin, TX 78728 US"></div>
         </div>
         <div>
           <h3>Delivery Location</h3>
           <label class="ls-label" for="zip-to">Zip</label>
-          <div class="ls-zip-wrap"><span class="zip-arrow">&#8600;</span><input class="ls-input ls-zip" id="zip-to" placeholder="e.g. 78701" inputmode="numeric" maxlength="5"></div>
+          <div class="ls-zip-wrap"><span class="zip-arrow">&#8600;</span><input class="ls-input ls-zip" id="zip-to" placeholder="e.g. 78701" value="Albuquerque, NM 87111 US"></div>
         </div>
       </div>
 

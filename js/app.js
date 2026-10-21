@@ -812,10 +812,10 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
       { sel: ".hh-ihd-card", text: "Household items can also route into the IHD network from here — this purple tile is the members-only path.", ihd: true, click: true },
     ],
     "list-shipment.html": [
-      { sel: ".ls-item", text: "Describe what you're shipping. Try a Bedframe: 12 \u00d7 12 \u00d7 21 in, 111 lbs." },
+      { sel: ".ls-item", text: "We've prefilled a 5-drawer dresser \u2014 change the size, weight, or quantity and the price updates instantly." },
       { sel: ".ls-locations", text: "Add pickup and delivery ZIP codes — try 78728 to 87111. We'll resolve the cities for you." },
       { sel: ".ls-est-box", text: "The estimate computes instantly from size, weight, and real distance — no waiting on rates." },
-      { sel: "#ls-continue", text: "Once every field is filled, Continue turns green. Fill in the form, then click it.", click: true },
+      { sel: "#ls-continue", text: "Everything's filled in, so Continue is ready \u2014 click it.", click: true },
     ],
     "confirm-shipment.html": [
       { sel: ".cs-summary", text: "Your shipment and price carry over automatically." },
