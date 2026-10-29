@@ -74,7 +74,14 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
           <a href="#" id="sign-out">Sign Out</a>
         </div>
       </button>
-      <span class="auth-help"><img src="assets/figma/help.svg" alt="Help"></span>
+      <button class="auth-help" id="help-btn" aria-label="Help"><img src="assets/figma/help.svg" alt="Help">
+        <div class="help-pop" id="help-pop" hidden>
+          <h4>Need a hand?</h4>
+          <p>Replay the guided walkthrough of the In-Home Delivery experience from the beginning.</p>
+          <a href="#" class="help-restart" id="help-restart">Restart the Walkthrough</a>
+          <a href="#" class="help-reset" id="help-reset">Reset demo &amp; start from the home page</a>
+        </div>
+      </button>
       <button class="menu-btn" aria-label="Menu">&#9776;</button>
     </div>`;
   document.getElementById("user-btn").addEventListener("click", (e) => {
@@ -83,6 +90,29 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   document.getElementById("sign-out").addEventListener("click", (e) => {
     e.preventDefault();
     try { localStorage.removeItem("uship_demo_user"); } catch (err) {}
+    location.href = "index.html";
+  });
+  // Help popover: restart or fully reset the walkthrough
+  const helpBtn = document.getElementById("help-btn");
+  const helpPop = document.getElementById("help-pop");
+  helpBtn.addEventListener("click", (e) => {
+    if (e.target.closest(".help-pop")) return;
+    helpPop.hidden = !helpPop.hidden;
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#help-btn")) helpPop.hidden = true;
+  });
+  document.getElementById("help-restart").addEventListener("click", (e) => {
+    e.preventDefault();
+    try { sessionStorage.setItem("uship_tour", "on"); } catch (err) {}
+    location.href = "shipments.html";
+  });
+  document.getElementById("help-reset").addEventListener("click", (e) => {
+    e.preventDefault();
+    try {
+      sessionStorage.clear();
+      localStorage.removeItem("uship_demo_user");
+    } catch (err) {}
     location.href = "index.html";
   });
 })();
