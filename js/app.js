@@ -359,6 +359,22 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   }
   const notes = document.getElementById("cs-notes");
   notes.addEventListener("input", () => (document.getElementById("cs-count").textContent = notes.value.length));
+
+  // Best-practice prefills: ~1-week pickup window, up to 2 weeks for delivery
+  const fmt = (days) => {
+    const dt = new Date(); dt.setDate(dt.getDate() + days);
+    const p = (n) => String(n).padStart(2, "0");
+    return dt.getFullYear() + "-" + p(dt.getMonth() + 1) + "-" + p(dt.getDate());
+  };
+  const dates = document.querySelectorAll(".cs-dates input");
+  if (dates.length === 4) {
+    dates[0].value = fmt(3);  dates[1].value = fmt(10); // pickup: one-week window
+    dates[2].value = fmt(5);  dates[3].value = fmt(19); // delivery: two-week window
+  }
+  if (!notes.value) {
+    notes.value = "Blanket wrap all pieces. Call 30 minutes before arrival. Delivery is room-of-choice — second-floor bedroom.";
+    document.getElementById("cs-count").textContent = notes.value.length;
+  }
 })();
 
 // Create a Listing: loading overlay, then the live listing page
@@ -859,7 +875,10 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     ],
     "confirm-shipment.html": [
       { sel: ".cs-summary", text: "Your shipment and price carry over automatically." },
+      { sel: ".cs-section:nth-of-type(1)", text: "Best practice: give carriers a window — about one week for pickup and two for delivery. We've prefilled ideal dates. Flexible dates help carriers fit you into their routes." },
+      { sel: ".cs-section:nth-of-type(2)", text: "No exact address yet? No problem — you can continue with just city and ZIP and add the street address once the listing is live." },
       { sel: ".cs-section:nth-of-type(4)", text: "Blanket Wrap comes pre-selected — it's the standard for In-Home Delivery.", ihd: true },
+      { sel: ".cs-section:nth-of-type(5)", text: "Pro tip: listings with photos get booked faster, and special instructions — stairs, call-ahead, fragile pieces — help carriers quote accurately. We've added an example." },
       { sel: "#create-listing", text: "Click Create a Listing to put this shipment in front of carriers.", click: true },
     ],
     "listing.html": [
