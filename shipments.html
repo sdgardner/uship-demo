@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Shipments — uShip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=3">
+</head>
+<body class="lp-page ms-page">
+
+<!-- ============ Header (swapped to logged-in state by app.js) ============ -->
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
+    <nav class="main-nav">
+      <a href="#">Getting Started</a>
+      <a href="#">Ship</a>
+      <a href="#">Find Shipments</a>
+      <a href="#">For Carriers</a>
+      <a href="#">For Business</a>
+    </nav>
+    <div class="header-auth">
+      <a href="signin.html">Sign In</a>
+      <a href="#">Join</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<!-- ============ Shipments toolbar ============ -->
+<div class="ms-toolbar">
+  <div class="container ms-toolbar-row">
+    <nav class="ms-tabs">
+      <a href="#">Saved</a>
+      <a href="#">Pending</a>
+      <a href="#" class="active">Assigned</a>
+      <a href="#">Completed</a>
+      <button class="ms-icon-btn" aria-label="Archived">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M9.5 13l5 5M14.5 13l-5 5" transform="translate(0 -1)"/></svg>
+      </button>
+      <button class="ms-icon-btn ms-bell" aria-label="Notifications">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="2"><path d="M18 9a6 6 0 0 0-12 0c0 7-2 8-2 8h16s-2-1-2-8M13.7 20a2 2 0 0 1-3.4 0"/></svg>
+        <span class="ms-bell-dot"></span>
+      </button>
+    </nav>
+    <div class="ms-search">
+      <input placeholder="Search">
+      <button aria-label="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><circle cx="10.5" cy="10.5" r="7"/><path d="M21 21l-5-5"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<main class="ms-main">
+  <div class="container">
+    <p class="ms-count"><span id="ms-count">0</span> Results</p>
+    <div class="ms-table">
+      <div class="ms-head">
+        <span>Pickup <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="#0288c2" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></span>
+        <span>Delivery <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="#0288c2" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></span>
+        <span>Goods</span>
+        <span>Reference Numbers</span>
+        <span>Info</span>
+        <span>Status</span>
+      </div>
+      <div class="ms-empty">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.6"><path d="M12 2l9 4.5v11L12 22l-9-4.5v-11L12 2z"/><path d="M3 6.5L12 11l9-4.5M12 11v11"/></svg>
+        <h3>No shipments yet</h3>
+        <p>When you book a shipment, you can track its progress right here.</p>
+        <a class="ms-ship-btn" href="new-shipment.html">Create a Shipment</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="lp-footer">
+  <div class="container">
+    <div class="lp-footer-top">
+      <nav>
+        <a href="#">How It Works</a>
+        <a href="#">Company</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Blog</a>
+      </nav>
+      <div class="lp-social">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M13.5 9H16l.5-3h-3V4.5c0-.9.3-1.5 1.6-1.5H16.6V.2C16.3.2 15.3 0 14.1 0 11.6 0 10 1.5 10 4.2V6H7v3h3v9h3.5V9z"/></svg></span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.4" fill="#fff" stroke="none"/></svg></span>
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L6 22H2.9l7.5-8.6L2.5 2h6.6l4.5 6.6L18.9 2zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20z"/></svg></span>
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.6A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.6 8.9.6 8.9.6s7 0 8.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2zM9.8 15.3V8.7l5.8 3.3-5.8 3.3z"/></svg></span>
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5a2.49 2.49 0 1 1 0 4.98 2.49 2.49 0 0 1 0-4.98zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></span>
+      </div>
+    </div>
+    <div class="lp-footer-bottom">
+      <small>Copyright © 2026, uShip Inc. and its licensors. All rights reserved. (Demo prototype)</small>
+      <div class="legal-links">
+        <a href="#">uShip User Agreement</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Site Map</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=3"></script>
+</body>
+</html>

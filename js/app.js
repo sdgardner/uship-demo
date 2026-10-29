@@ -3,7 +3,7 @@
 // that advances to the next screen in the demo flow.
 
 const FLOW = {
-  "signin.html": "index.html",
+  "signin.html": "shipments.html",
   "index.html": "new-shipment.html",       // Get Shipping Quotes (no category selected)
   "new-shipment.html": "list-shipment.html",   // Start an IHD Shipment
   "household-items.html": "list-shipment.html", // IHD Private Network card
@@ -58,8 +58,8 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     <div class="auth-left">
       <a class="logo" href="index.html"><img src="assets/uship-logo.svg" alt="uShip"></a>
       <nav class="auth-tabs">
-        <a class="auth-tab" href="#"><img src="assets/figma/icon-shipments.svg" alt=""> My Shipments</a>
-        <a class="auth-tab" href="#"><img src="assets/figma/icon-ship.svg" alt=""> Ship</a>
+        <a class="auth-tab" href="shipments.html"><img src="assets/figma/icon-shipments.svg" alt=""> My Shipments</a>
+        <a class="auth-tab" href="new-shipment.html"><img src="assets/figma/icon-ship.svg" alt=""> Ship</a>
       </nav>
     </div>
     <div class="auth-right">
@@ -799,6 +799,11 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     ],
     "signin.html": [
       { sel: ".auth-submit", text: "Credentials are pre-filled for this demo. Just click Sign in.", click: true },
+    ],
+    "shipments.html": [
+      { sel: ".badge-ihd", text: "You're signed in as an In-Home Delivery member \u2014 this badge follows you through the experience.", ihd: true },
+      { sel: ".ms-table", text: "This is My Shipments \u2014 every listing you create lives here with live status tracking. It's empty for now, so let's fix that." },
+      { sel: ".ms-ship-btn", text: "Click Create a Shipment to get started.", click: true },
     ],
     "index.html:in": [
       { sel: ".badge-ihd", text: "You're signed in as an In-Home Delivery member — this badge follows you through the experience.", ihd: true },
