@@ -946,3 +946,8 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     showStep(0);
   }
 })();
+
+// My Shipments: mobile status dropdown
+document.getElementById("ms-cur-toggle")?.addEventListener("click", () => {
+  document.getElementById("ms-tabs").classList.toggle("open");
+});
