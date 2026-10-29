@@ -844,7 +844,7 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
       { sel: ".hero-cta .btn-primary", text: "Let's ship something. Click Get Shipping Quotes.", click: true },
     ],
     "new-shipment.html": [
-      { sel: ".ns-grid", text: "This is the General Marketplace — every category of big-and-bulky shipping, open to all shippers." },
+      { sel: ".ns-section:last-of-type .ns-section-head", text: "This is the General Marketplace — every category of big-and-bulky shipping, open to all shippers." },
       { sel: ".ihd-card", text: "As an IHD member, you also get a private network of approved white-glove carriers.", ihd: true },
       { sel: ".btn-ihd", text: "Click Start an IHD Shipment to begin.", click: true },
     ],
@@ -916,7 +916,9 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     const el = document.querySelector(s.sel);
     if (!el) { showStep(i + 1); return; }
     el.classList.add("tour-ring");
-    el.scrollIntoView({ block: "center", behavior: "smooth" });
+    // Don't center-scroll targets taller than the viewport — pin their top instead
+    const block = el.offsetHeight > window.innerHeight * 0.6 ? "start" : "center";
+    el.scrollIntoView({ block, behavior: "smooth" });
 
     const tip = document.createElement("div");
     tip.className = "tour-tip" + (s.ihd ? " tour-tip-ihd" : "");
