@@ -1779,7 +1779,13 @@ a { color: inherit; text-decoration: none; }
 .ms-ship-btn:hover { color: var(--green-dark); border-color: var(--green-dark); }
 .ms-cur { display: none; }
 .ms-m-extra { display: none; }
-@media (max-width: 760px) {
+@media (max-width: 950px) {
+  /* Collapse the signed-in header to logo + badge + menu on this page */
+  .ms-page .site-header.signed-in .auth-tabs,
+  .ms-page .site-header.signed-in .auth-user,
+  .ms-page .site-header.signed-in .auth-help { display: none; }
+  .ms-page .site-header.signed-in .menu-btn { display: block; margin-left: 0; }
+  .ms-head { display: none; }
   .ms-toolbar-row { flex-direction: column; align-items: stretch; gap: 0; }
   .ms-cur {
     display: flex; align-items: center; justify-content: space-between;
