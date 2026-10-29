@@ -104,8 +104,12 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
   });
   document.getElementById("help-restart").addEventListener("click", (e) => {
     e.preventDefault();
-    try { sessionStorage.setItem("uship_tour", "on"); } catch (err) {}
-    location.href = "shipments.html";
+    try {
+      sessionStorage.clear();
+      sessionStorage.setItem("uship_tour", "on"); // skip the welcome modal, start stepping right away
+      localStorage.removeItem("uship_demo_user"); // walkthrough includes signing in
+    } catch (err) {}
+    location.href = "index.html";
   });
   document.getElementById("help-reset").addEventListener("click", (e) => {
     e.preventDefault();
@@ -840,7 +844,8 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
       { sel: ".hero-cta .btn-primary", text: "Let's ship something. Click Get Shipping Quotes.", click: true },
     ],
     "new-shipment.html": [
-      { sel: ".ihd-card", text: "As an IHD member, you get a private network of approved white-glove carriers — alongside the general marketplace below.", ihd: true },
+      { sel: ".ns-grid", text: "This is the General Marketplace — every category of big-and-bulky shipping, open to all shippers." },
+      { sel: ".ihd-card", text: "As an IHD member, you also get a private network of approved white-glove carriers.", ihd: true },
       { sel: ".btn-ihd", text: "Click Start an IHD Shipment to begin.", click: true },
     ],
     "household-items.html": [
