@@ -802,8 +802,8 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     ],
     "shipments.html": [
       { sel: ".badge-ihd", text: "You're signed in as an In-Home Delivery member \u2014 this badge follows you through the experience.", ihd: true },
-      { sel: ".ms-table", text: "This is My Shipments \u2014 every listing you create lives here with live status tracking. It's empty for now, so let's fix that." },
-      { sel: ".ms-ship-btn", text: "Click Create a Shipment to get started.", click: true },
+      { sel: ".ms-empty", text: "This is My Shipments \u2014 every listing you create lives here with live status tracking. It's empty for now, so let's fix that." },
+      { sel: ".ms-ship-btn", text: "Click Start a New Shipment to get going.", click: true },
     ],
     "index.html:in": [
       { sel: ".badge-ihd", text: "You're signed in as an In-Home Delivery member — this badge follows you through the experience.", ihd: true },

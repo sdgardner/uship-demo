@@ -39,11 +39,10 @@
       <a href="#" class="active">Assigned</a>
       <a href="#">Completed</a>
       <button class="ms-icon-btn" aria-label="Archived">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M9.5 13l5 5M14.5 13l-5 5" transform="translate(0 -1)"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="17" rx="2" fill="#262626"/><path d="M8.5 9l7 7M15.5 9l-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
       <button class="ms-icon-btn ms-bell" aria-label="Notifications">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="2"><path d="M18 9a6 6 0 0 0-12 0c0 7-2 8-2 8h16s-2-1-2-8M13.7 20a2 2 0 0 1-3.4 0"/></svg>
-        <span class="ms-bell-dot"></span>
       </button>
     </nav>
     <div class="ms-search">
@@ -56,21 +55,11 @@
 <main class="ms-main">
   <div class="container">
     <p class="ms-count"><span id="ms-count">0</span> Results</p>
-    <div class="ms-table">
-      <div class="ms-head">
-        <span>Pickup <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="#0288c2" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></span>
-        <span>Delivery <svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="#0288c2" stroke-width="2"><path d="M1 1.5l5 5 5-5"/></svg></span>
-        <span>Goods</span>
-        <span>Reference Numbers</span>
-        <span>Info</span>
-        <span>Status</span>
-      </div>
-      <div class="ms-empty">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.6"><path d="M12 2l9 4.5v11L12 22l-9-4.5v-11L12 2z"/><path d="M3 6.5L12 11l9-4.5M12 11v11"/></svg>
-        <h3>No shipments yet</h3>
-        <p>When you book a shipment, you can track its progress right here.</p>
-        <a class="ms-ship-btn" href="new-shipment.html">Create a Shipment</a>
-      </div>
+    <div class="ms-empty">
+      <img src="assets/figma/icon-shipments.svg" alt="" class="ms-empty-icon">
+      <h3>No Shipments</h3>
+      <p>You do not currently have any shipments in this status. Find what you're looking for in another tab or&hellip;</p>
+      <a class="ms-ship-btn" href="new-shipment.html">Start a New Shipment</a>
     </div>
   </div>
 </main>
