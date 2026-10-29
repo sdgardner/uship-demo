@@ -888,8 +888,14 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
       { sel: "[data-tab='questions']", text: "Carriers can message you before you book. Open the Questions tab.", click: true },
       { sel: ".qa-card", text: "Threaded Q&A keeps the conversation on uShip — reply to carriers right from your listing." },
       { sel: "[data-tab='quotes']", text: "Carriers have already quoted. Open the Quote tab.", click: true },
-      { sel: ".q-card", text: "Compare carriers — click a carrier's name to see their full profile and reviews." },
+      { sel: ".q-card .q-name", text: "Compare carriers \u2014 click a carrier's name to see their full profile and reviews.", click: true, resumeAt: 7 },
       { sel: ".q-accept", text: "Ready to book? Click Accept on a quote.", click: true },
+    ],
+    "carrier-profile.html": [
+      { sel: ".cp-side", text: "Every carrier has a public profile \u2014 rating, verified business info, and how many shippers would use them again." },
+      { sel: ".cp-stats", text: "Completed shipments and cancellation rate help you vet a carrier before you book." },
+      { sel: ".cp-reviews-title", text: "Real reviews from shippers who have used this carrier." },
+      { sel: ".cp-back", text: "Done looking? Head back to your quotes and accept one.", click: true },
     ],
     "checkout.html": [
       { sel: ".co-plan-card", text: "Shippers can add the uShip Protection Plan for covered items — recommended, and priced off the declared value." },
@@ -977,7 +983,10 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     tip.querySelector(".tour-tip-skip").addEventListener("click", endTour);
     const next = tip.querySelector(".tour-tip-next");
     if (next) next.addEventListener("click", () => (s.last ? endTour() : showStep(i + 1)));
-    if (s.click) el.addEventListener("click", () => setTimeout(() => showStep(i + 1), 150), { once: true });
+    if (s.click) el.addEventListener("click", () => {
+      if (s.resumeAt != null) { try { sessionStorage.setItem("uship_tour_resume", PAGE + ":" + s.resumeAt); } catch (e) {} }
+      setTimeout(() => showStep(i + 1), 150);
+    }, { once: true });
   }
 
   function startTour() { T.set("on"); showStep(0); }
@@ -999,7 +1008,13 @@ if ((location.pathname.split("/").pop() || "index.html") === "signin.html") {
     ov.querySelector(".tour-start").addEventListener("click", () => { ov.remove(); startTour(); });
     ov.querySelector(".tour-later").addEventListener("click", () => { ov.remove(); T.set("done"); });
   } else if (T.get() === "on" && steps) {
-    showStep(0);
+    // Returning from a side trip (e.g. carrier profile): pick up where the tour left off
+    let at = 0;
+    try {
+      const r = (sessionStorage.getItem("uship_tour_resume") || "").split(":");
+      if (r[0] === PAGE) { at = parseInt(r[1], 10) || 0; sessionStorage.removeItem("uship_tour_resume"); }
+    } catch (e) {}
+    showStep(at);
   }
 })();
 
