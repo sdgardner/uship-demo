@@ -1723,13 +1723,15 @@ a { color: inherit; text-decoration: none; }
    ============================================ */
 .ms-page { background: #f4f4f4; }
 .ms-toolbar { background: #fff; border-bottom: 1px solid #ddd; }
-.ms-toolbar-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.ms-toolbar-row { display: flex; align-items: center; gap: 16px; }
 .ms-tabs { display: flex; align-items: center; gap: 8px; }
+.ms-tabs { flex-shrink: 0; }
 .ms-tabs a {
   font: 700 15px/1 var(--font); letter-spacing: 1.2px; text-transform: uppercase;
   color: #262626;
   padding: 22px 14px 19px;
   border-bottom: 3px solid transparent;
+  white-space: nowrap;
 }
 .ms-tabs a.active { border-bottom-color: #0288c2; }
 .ms-tabs a:hover { color: #0288c2; }
@@ -1743,7 +1745,7 @@ a { color: inherit; text-decoration: none; }
   width: 7px; height: 7px; border-radius: 50%;
   background: #db3939; border: 1.5px solid #fff;
 }
-.ms-search { display: flex; min-width: 300px; flex: 0 1 400px; }
+.ms-search { display: flex; margin-left: auto; flex: 0 1 400px; min-width: 180px; }
 .ms-search input {
   flex: 1; min-width: 0; height: 42px;
   border: 1px solid #c4c4c4; border-right: none; border-radius: 3px 0 0 3px;
